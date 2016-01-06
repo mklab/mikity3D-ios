@@ -68,12 +68,6 @@ public class Main extends UIApplicationDelegateAdapter implements GLKViewDelegat
 		}
 	}
 
-	@Override
-	public void draw(GLKView view, CGRect rect) {
-		GL.glClearColor(curRed, 0.0f, 0.0f, 1.0f);
-		GL.glClear(GL.GL_COLOR_BUFFER_BIT);
-	}
-
     public static void main(String[] args) {
         try (NSAutoreleasePool pool = new NSAutoreleasePool()) {
             UIApplication.main(args, null, Main.class);
@@ -82,6 +76,5 @@ public class Main extends UIApplicationDelegateAdapter implements GLKViewDelegat
 
 	@Override
 	public void willPause(GLKViewController controller, boolean pause) {
-		
 	}
 }
