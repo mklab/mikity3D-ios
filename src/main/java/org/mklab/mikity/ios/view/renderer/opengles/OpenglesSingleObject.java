@@ -72,7 +72,6 @@ public class OpenglesSingleObject implements OpenglesObject {
   private void applyColor(GL gl, ColorModel color) {
     //final ColorModel color = ((AbstractGraphicObject)this.object).getColor();
     gl.glColor4f(color.getRf(), color.getGf(), color.getBf(), color.getAlphaf());
-
   }
   
   /**

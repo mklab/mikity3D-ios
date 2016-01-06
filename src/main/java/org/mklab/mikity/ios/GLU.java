@@ -76,9 +76,9 @@ public class GLU {
             scratch[13] = 0.0f;
             scratch[14] = 0.0f;
             scratch[15] = 1.0f;
-            gl.glMultMatrixf(scratch, 0);
+            GL.glMultMatrixf(scratch, 0);
         }
-        gl.glTranslatef(-eyeX, -eyeY, -eyeZ);
+        GL.glTranslatef(-eyeX, -eyeY, -eyeZ);
     }
     /**
      * Set up a 2D orthographic projection matrix
@@ -91,7 +91,7 @@ public class GLU {
      */
     public static void gluOrtho2D(GL gl, float left, float right,
             float bottom, float top) {
-        gl.glOrthof(left, right, bottom, top, -1.0f, 1.0f);
+        GL.glOrthof(left, right, bottom, top, -1.0f, 1.0f);
     }
     /**
      * Set up a perspective projection matrix
@@ -113,7 +113,7 @@ public class GLU {
         float bottom = -top;
         float left = bottom * aspect;
         float right = top * aspect;
-        gl.glFrustumf(left, right, bottom, top, zNear, zFar);
+        GL.glFrustumf(left, right, bottom, top, zNear, zFar);
     }
     /**
      * Map object coordinates into window coordinates. gluProject transforms the
