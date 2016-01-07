@@ -2,6 +2,7 @@ package org.mklab.mikity.ios;
 
 import org.mklab.mikity.ios.sample.GLRendererSample;
 import org.robovm.apple.coregraphics.CGRect;
+import org.robovm.apple.foundation.NSArray;
 import org.robovm.apple.foundation.NSAutoreleasePool;
 import org.robovm.apple.glkit.GLKView;
 import org.robovm.apple.glkit.GLKViewController;
@@ -15,6 +16,9 @@ import org.robovm.apple.uikit.UIApplicationLaunchOptions;
 import org.robovm.apple.uikit.UIColor;
 import org.robovm.apple.uikit.UINavigationController;
 import org.robovm.apple.uikit.UIScreen;
+import org.robovm.apple.uikit.UISplitViewController;
+import org.robovm.apple.uikit.UIView;
+import org.robovm.apple.uikit.UIViewController;
 import org.robovm.apple.uikit.UIWindow;
 
 public class Main extends UIApplicationDelegateAdapter implements GLKViewControllerDelegate {
@@ -32,14 +36,22 @@ public class Main extends UIApplicationDelegateAdapter implements GLKViewControl
 		viewController.viewDidLoad();
 		view.setDelegate(viewController);
 		
-		UINavigationController navi = new UINavigationController(viewController);
-
+		UISplitViewController split = new UISplitViewController();
+		
+		MyViewController secontView = new MyViewController();
+		
 		viewController.setView(view);
+		
+		UINavigationController navi = new UINavigationController(viewController);
+		
+		split.setViewControllers(new NSArray<UIViewController>(secontView, navi));
+		
+		viewController.getNavigationItem().setLeftBarButtonItem(split.getDisplayModeButtonItem());
 		
 //		final MyGLKViewControllerDelegate gcDelegate = new MyGLKViewControllerDelegate(this);
 		viewController.setDelegate(this);
 		viewController.setPreferredFramesPerSecond(60);
-		this.window.setRootViewController(navi);
+		this.window.setRootViewController(split);
 		
 		this.window.setBackgroundColor(UIColor.white());
 		this.window.makeKeyAndVisible();
