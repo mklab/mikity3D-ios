@@ -76,20 +76,20 @@ public class OpenglesObjectRenderer implements ObjectRenderer {
    * {@inheritDoc}
    */
   public void onSurfaceCreated(GL gl) {
-    gl.glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+    GL.glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
-    gl.glEnable(GL.GL_LIGHTING); //光源を有効にします 
-    gl.glEnable(GL.GL_COLOR_MATERIAL); //カラーマテリアルを有効にします
-    gl.glEnable(GL.GL_NORMALIZE);
-    gl.glEnable(GL.GL_LIGHT0); //0番のライトを有効にします
-    gl.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 100.0f);
+    GL.glEnable(GL.GL_LIGHTING); //光源を有効にします 
+    GL.glEnable(GL.GL_COLOR_MATERIAL); //カラーマテリアルを有効にします
+    GL.glEnable(GL.GL_NORMALIZE);
+    GL.glEnable(GL.GL_LIGHT0); //0番のライトを有効にします
+    GL.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 100.0f);
         
     final LightModel light = this.configuration.getLight();
     final float[] lightLocation = new float[]{light.getX(), light.getY(), light.getZ(), 1.0f};
-    gl.glLightfv(GL.GL_LIGHT0, GL.GL_POSITION, lightLocation, 0); // 平行光源を設定します 
-    gl.glLightfv(GL.GL_LIGHT0, GL.GL_SPECULAR, this.lightSpecular, 0); // 反射光の強さを設定します 
-    gl.glLightfv(GL.GL_LIGHT0, GL.GL_DIFFUSE, this.lightDiffuse, 0); // 拡散光の強さを設定します 
-    gl.glLightfv(GL.GL_LIGHT0, GL.GL_AMBIENT, this.lightAmbient, 0); // 環境光の強さを設定します
+    GL.glLightfv(GL.GL_LIGHT0, GL.GL_POSITION, lightLocation, 0); // 平行光源を設定します 
+    GL.glLightfv(GL.GL_LIGHT0, GL.GL_SPECULAR, this.lightSpecular, 0); // 反射光の強さを設定します 
+    GL.glLightfv(GL.GL_LIGHT0, GL.GL_DIFFUSE, this.lightDiffuse, 0); // 拡散光の強さを設定します 
+    GL.glLightfv(GL.GL_LIGHT0, GL.GL_AMBIENT, this.lightAmbient, 0); // 環境光の強さを設定します
   }
 
   /**
@@ -97,33 +97,33 @@ public class OpenglesObjectRenderer implements ObjectRenderer {
    */
   public void onDrawFrame(GL gl) {
     final ColorModel background = this.configuration.getBackground().getColor();
-    gl.glClearColor(background.getRf(), background.getGf(), background.getBf(), background.getAlphaf());  
+    GL.glClearColor(background.getRf(), background.getGf(), background.getBf(), background.getAlphaf());  
 
-    gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
+    GL.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
 
-    gl.glMatrixMode(GL.GL_PROJECTION);
-    gl.glLoadIdentity();
+    GL.glMatrixMode(GL.GL_PROJECTION);
+    GL.glLoadIdentity();
     GLU.gluPerspective(gl, 10.0f, this.aspect, 0.1f, 1000.0f);
 
-    gl.glEnable(GL.GL_DEPTH_TEST); // 奥行き判定を有効にします 
+    GL.glEnable(GL.GL_DEPTH_TEST); // 奥行き判定を有効にします 
     // gl10.glEnable(GL10.GL_CULL_FACE); // 裏返ったポリゴンを描画しません 
 
     // 光源位置の指定
-    gl.glMatrixMode(GL.GL_MODELVIEW);
-    gl.glLoadIdentity();
+    GL.glMatrixMode(GL.GL_MODELVIEW);
+    GL.glLoadIdentity();
     final LightModel light = this.configuration.getLight();
     final float[] lightLocation = new float[]{light.getX(), light.getY(), light.getZ(), 1.0f};
-    gl.glLightfv(GL.GL_LIGHT0, GL.GL_POSITION, lightLocation, 0); // 平行光源を設定します 
+    GL.glLightfv(GL.GL_LIGHT0, GL.GL_POSITION, lightLocation, 0); // 平行光源を設定します 
 
     final EyeModel eye = this.configuration.getEye();
     final LookAtPointModel lookAtPoint = this.configuration.getLookAtPoint();
     GLU.gluLookAt(gl, eye.getX(), eye.getY(), eye.getZ(), lookAtPoint.getX(), lookAtPoint.getY(), lookAtPoint.getZ(), 0.0F, 0.0F, 1.0F);
 
-    gl.glTranslatef(0.0f, this.translationY, -this.translationZ);
-    gl.glRotatef(this.rotationY, 0.0f, 1.0f, 0.0f);
-    gl.glRotatef(this.rotationZ, 0.0f, 0.0f, 1.0f);
+    GL.glTranslatef(0.0f, this.translationY, -this.translationZ);
+    GL.glRotatef(this.rotationY, 0.0f, 1.0f, 0.0f);
+    GL.glRotatef(this.rotationZ, 0.0f, 0.0f, 1.0f);
 
-    gl.glScalef(this.scale, this.scale, this.scale);
+    GL.glScalef(this.scale, this.scale, this.scale);
 
     final boolean isAxisShowing = this.configuration.getBaseCoordinate().isAxisShowing();
     
@@ -142,7 +142,7 @@ public class OpenglesObjectRenderer implements ObjectRenderer {
    */
   public void onSurfaceChanged(GL gl, int width, int height) {
     //ビューポート変換
-    gl.glViewport(0, 0, width, height);
+    GL.glViewport(0, 0, width, height);
     this.aspect = (float)width / (float)height;
   }
 
