@@ -27,5 +27,4 @@ public class Menu extends UITableViewController{
 			
 		}
 	}
-
 }

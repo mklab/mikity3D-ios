@@ -1,23 +1,20 @@
 package org.mklab.mikity.ios;
 
 import org.mklab.mikity.ios.sample.GLRendererSample;
-import org.robovm.apple.coregraphics.CGRect;
 import org.robovm.apple.foundation.NSArray;
 import org.robovm.apple.foundation.NSAutoreleasePool;
 import org.robovm.apple.glkit.GLKView;
 import org.robovm.apple.glkit.GLKViewController;
 import org.robovm.apple.glkit.GLKViewControllerDelegate;
-import org.robovm.apple.glkit.GLKViewDelegate;
 import org.robovm.apple.opengles.EAGLContext;
 import org.robovm.apple.opengles.EAGLRenderingAPI;
 import org.robovm.apple.uikit.UIApplication;
 import org.robovm.apple.uikit.UIApplicationDelegateAdapter;
 import org.robovm.apple.uikit.UIApplicationLaunchOptions;
 import org.robovm.apple.uikit.UIColor;
-import org.robovm.apple.uikit.UINavigationController;
 import org.robovm.apple.uikit.UIScreen;
 import org.robovm.apple.uikit.UISplitViewController;
-import org.robovm.apple.uikit.UIView;
+import org.robovm.apple.uikit.UISplitViewControllerDisplayMode;
 import org.robovm.apple.uikit.UIViewController;
 import org.robovm.apple.uikit.UIWindow;
 
@@ -38,17 +35,20 @@ public class Main extends UIApplicationDelegateAdapter implements GLKViewControl
 		
 		UISplitViewController split = new UISplitViewController();
 		
-		MyViewController secontView = new MyViewController();
+		Menu menu = new Menu();
 		
 		viewController.setView(view);
 		
-		UINavigationController navi = new UINavigationController(viewController);
+		Navigation navi = new Navigation(viewController);
 		
-		split.setViewControllers(new NSArray<UIViewController>(secontView, navi));
+		split.setViewControllers(new NSArray<UIViewController>(menu, navi));
+		split.collapseSecondaryViewController(menu, split);
+		split.setPreferredDisplayMode(UISplitViewControllerDisplayMode.PrimaryHidden);
 		
 		viewController.getNavigationItem().setLeftBarButtonItem(split.getDisplayModeButtonItem());
+		viewController.getNavigationItem().setTitle("Mikity3D");
+		viewController.getNavigationItem().setRightBarButtonItems(navi.getPlayerButtons());
 		
-//		final MyGLKViewControllerDelegate gcDelegate = new MyGLKViewControllerDelegate(this);
 		viewController.setDelegate(this);
 		viewController.setPreferredFramesPerSecond(60);
 		this.window.setRootViewController(split);
