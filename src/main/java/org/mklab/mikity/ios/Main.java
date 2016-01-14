@@ -12,6 +12,7 @@ import org.robovm.apple.uikit.UIApplication;
 import org.robovm.apple.uikit.UIApplicationDelegateAdapter;
 import org.robovm.apple.uikit.UIApplicationLaunchOptions;
 import org.robovm.apple.uikit.UIColor;
+import org.robovm.apple.uikit.UIModalPresentationStyle;
 import org.robovm.apple.uikit.UIScreen;
 import org.robovm.apple.uikit.UISplitViewController;
 import org.robovm.apple.uikit.UISplitViewControllerDisplayMode;
@@ -44,7 +45,7 @@ public class Main extends UIApplicationDelegateAdapter implements GLKViewControl
 		split.setViewControllers(new NSArray<UIViewController>(menu, navi));
 		split.collapseSecondaryViewController(menu, split);
 		split.setPreferredDisplayMode(UISplitViewControllerDisplayMode.PrimaryHidden);
-		
+
 		viewController.getNavigationItem().setLeftBarButtonItem(split.getDisplayModeButtonItem());
 		viewController.getNavigationItem().setTitle("Mikity3D");
 		viewController.getNavigationItem().setRightBarButtonItems(navi.getPlayerButtons());
