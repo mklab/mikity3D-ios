@@ -1,13 +1,24 @@
 package org.mklab.mikity.ios;
+import java.io.File;
+
 import org.robovm.apple.coregraphics.CGRect;
 import org.robovm.apple.coregraphics.CGSize;
-import org.robovm.apple.uikit.UIBarButtonSystemItem;
+import org.robovm.apple.foundation.NSArray;
+import org.robovm.apple.foundation.NSFileManager;
+import org.robovm.apple.foundation.NSSearchPathDirectory;
+import org.robovm.apple.foundation.NSSearchPathDomainMask;
+import org.robovm.apple.foundation.NSURL;
 import org.robovm.apple.uikit.UIButton;
 import org.robovm.apple.uikit.UIButtonType;
 import org.robovm.apple.uikit.UIColor;
+import org.robovm.apple.uikit.UIControl;
+import org.robovm.apple.uikit.UIControl.OnTouchUpInsideListener;
 import org.robovm.apple.uikit.UIControlState;
+import org.robovm.apple.uikit.UIEvent;
 import org.robovm.apple.uikit.UIFont;
 import org.robovm.apple.uikit.UILabel;
+import org.robovm.apple.uikit.UIModalPresentationStyle;
+import org.robovm.apple.uikit.UIModalTransitionStyle;
 import org.robovm.apple.uikit.UIScrollView;
 import org.robovm.apple.uikit.UISwitch;
 import org.robovm.apple.uikit.UIViewController;
@@ -69,6 +80,20 @@ public class Menu extends UIViewController{
 		// sample
 		UILabel sampleLabel = createLabel("Samples", new CGRect(10, 410, 100, 30));
 		UIButton sampleModelButton = createButton("Model", new CGRect(10, 450, 70, 30));
+		sampleModelButton.addOnTouchUpInsideListener(new OnTouchUpInsideListener() {
+			@Override
+			public void onTouchUpInside(UIControl control, UIEvent event) {
+				SampleMenu sample = new SampleMenu();
+				
+				sample.getView().setFrame(new CGRect(0,0,300,getView().getFrame().getHeight()));
+				
+//				sample.getView().setAutoresizingMask(UIViewAutoresizing.FlexibleLeftMargin);
+				sample.setModalPresentationStyle(UIModalPresentationStyle.OverCurrentContext);
+				sample.setModalTransitionStyle(UIModalTransitionStyle.CoverVertical);
+				presentViewController(sample, true, null);
+			}
+		});
+		
 		UIButton sampleSourceButton = createButton("Source", new CGRect(10, 490, 80, 30));
 		scrollView.addSubview(sampleLabel);
 		scrollView.addSubview(sampleModelButton);
