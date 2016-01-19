@@ -69,7 +69,7 @@ public class OpenglesGridObject {
    * @param gl GL　
    */
   private void applyColor(GL gl, ColorModel color) {
-    gl.glColor4f(color.getRf(), color.getGf(), color.getBf(), color.getAlphaf());
+    GL.glColor4f(color.getRf(), color.getGf(), color.getBf(), color.getAlphaf());
   }
   
   /**
@@ -107,12 +107,12 @@ public class OpenglesGridObject {
     final FloatBuffer vertexBuffer = makeFloatBuffer(vertexArray);
     
     // 頂点配列の有効化
-    gl.glEnableClientState(GL.GL_VERTEX_ARRAY);
+    GL.glEnableClientState(GL.GL_VERTEX_ARRAY);
     // 頂点バッファの指定
-    gl.glVertexPointer(3, GL.GL_FLOAT, 0, vertexBuffer);
+    GL.glVertexPointer(3, GL.GL_FLOAT, 0, vertexBuffer);
 
     final int number = vertexArray.length/3;
-    gl.glDrawArrays(GL.GL_LINES, 0, number);
+    GL.glDrawArrays(GL.GL_LINES, 0, number);
   }
   
   /**

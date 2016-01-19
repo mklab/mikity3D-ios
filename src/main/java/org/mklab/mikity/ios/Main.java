@@ -12,7 +12,6 @@ import org.robovm.apple.uikit.UIApplication;
 import org.robovm.apple.uikit.UIApplicationDelegateAdapter;
 import org.robovm.apple.uikit.UIApplicationLaunchOptions;
 import org.robovm.apple.uikit.UIColor;
-import org.robovm.apple.uikit.UIModalPresentationStyle;
 import org.robovm.apple.uikit.UIScreen;
 import org.robovm.apple.uikit.UISplitViewController;
 import org.robovm.apple.uikit.UISplitViewControllerDisplayMode;
@@ -42,6 +41,7 @@ public class Main extends UIApplicationDelegateAdapter implements GLKViewControl
 		
 		Navigation navi = new Navigation(viewController);
 		
+		
 		split.setViewControllers(new NSArray<UIViewController>(menu, navi));
 		split.collapseSecondaryViewController(menu, split);
 		split.setPreferredDisplayMode(UISplitViewControllerDisplayMode.PrimaryHidden);
@@ -62,19 +62,6 @@ public class Main extends UIApplicationDelegateAdapter implements GLKViewControl
 
 	@Override
 	public void update(GLKViewController controller) {
-		if (increasing) {
-			curRed += 1.0f * controller.getTimeSinceLastUpdate();
-		} else {
-			curRed -= 1.0f * controller.getTimeSinceLastUpdate();
-		}
-		if (curRed >= 1.0f) {
-			curRed = 1.0f;
-			increasing = false;
-		}
-		if (curRed <= 0.0f) {
-			curRed = 0.0f;
-			increasing = true;
-		}
 	}
 
     public static void main(String[] args) {
