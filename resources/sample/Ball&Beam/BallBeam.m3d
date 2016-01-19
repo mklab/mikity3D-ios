@@ -1,0 +1,64 @@
+<mikity3d version="0.3">
+   <scene>
+      <group name="ballBeam">
+         <translation x="0.0" y="0.0" z="0.0"/>
+         <rotation x="0.0" y="0.0" z="0.0"/>
+         <null/>
+         <group name="base">
+            <translation x="0.0" y="0.0" z="0.0"/>
+            <rotation x="0.0" y="0.0" z="0.0"/>
+            <box width="0.01" height="0.03" depth="0.01">
+               <color r="255" g="165" b="0" alpha="255" name="orange"/>
+               <translation x="0.0" y="0.0" z="0.015"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+            </box>
+            <cylinder radius="0.005" height="0.012" division="36">
+               <color r="255" g="165" b="0" alpha="255" name="orange"/>
+               <translation x="0.0" y="0.0" z="0.035"/>
+               <rotation x="0.0" y="1.5708" z="0.0"/>
+            </cylinder>
+            <group name="beam">
+               <translation x="0.0" y="0.0" z="0.035"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <animation target="rotationX">
+                  <source id="0" number="4"/>
+               </animation>
+               <box width="0.2" height="0.01" depth="0.01">
+                  <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+               </box>
+               <group name="ball">
+                  <translation x="0.0" y="0.0" z="0.015"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <animation target="translationY">
+                     <source id="0" number="2"/>
+                  </animation>
+                  <animation target="rotationX">
+                     <source id="0" number="3"/>
+                  </animation>
+                  <sphere radius="0.01" division="36">
+                     <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                     <translation x="0.0" y="0.0" z="0.0"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </sphere>
+               </group>
+            </group>
+         </group>
+      </group>
+   </scene>
+   <configuration>
+      <background>
+         <color r="255" g="255" b="255" alpha="255" name="white"/>
+      </background>
+      <baseCoordinate>
+         <gridColor r="20" g="20" b="20" alpha="255"/>
+         <gridSize>0.05</gridSize>
+         <isAxisShowing>false</isAxisShowing>
+         <isGridShowing>true</isGridShowing>         
+      </baseCoordinate>
+      <light x="10.0" y="10.0" z="20.0"/>
+      <eye x="1.5" y="0.0" z="0.0"/>
+      <lookAtPoint x="0.0" y="0.0" z="0.035"/>
+      <modelUnit angle="radian" length="m"/>
+      <dataUnit angle="radian" length="m"/>
+   </configuration>
+</mikity3d>

@@ -1,0 +1,1646 @@
+<mikity3d version="0.3">
+   <scene>
+      <group name="Pendulum1">
+         <translation x="0.0" y="0.0" z="0.6"/>
+         <rotation x="0.0" y="0.0" z="0.0"/>
+         <null/>
+         <group name="Pendulum1">
+            <translation x="-0.6" y="0.0" z="0.0"/>
+            <rotation x="0.0" y="0.0" z="0.0"/>
+            <null/>
+            <group name="pendulum1">
+               <translation x="0.0" y="-0.6" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+            <group name="pendulum2">
+               <translation x="0.0" y="0.0" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+            <group name="pendulum3">
+               <translation x="0.0" y="0.6" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+         </group>
+         <group name="Pendulum2">
+            <translation x="0.0" y="0.0" z="0.0"/>
+            <rotation x="0.0" y="0.0" z="0.0"/>
+            <null/>
+            <group name="pendulum1">
+               <translation x="0.0" y="-0.6" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+            <group name="pendulum2">
+               <translation x="0.0" y="0.0" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+            <group name="pendulum3">
+               <translation x="0.0" y="0.6" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+         </group>
+         <group name="Pendulum3">
+            <translation x="0.6" y="0.0" z="0.0"/>
+            <rotation x="0.0" y="0.0" z="0.0"/>
+            <null/>
+            <group name="pendulum1">
+               <translation x="0.0" y="-0.6" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+            <group name="pendulum2">
+               <translation x="0.0" y="0.0" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+            <group name="pendulum3">
+               <translation x="0.0" y="0.6" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+         </group>
+      </group>
+      <group name="Pendulum2">
+         <translation x="0.0" y="0.0" z="0.0"/>
+         <rotation x="0.0" y="0.0" z="0.0"/>
+         <null/>
+         <group name="Pendulum1">
+            <translation x="-0.6" y="0.0" z="0.0"/>
+            <rotation x="0.0" y="0.0" z="0.0"/>
+            <null/>
+            <group name="pendulum1">
+               <translation x="0.0" y="-0.6" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+            <group name="pendulum2">
+               <translation x="0.0" y="0.0" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+            <group name="pendulum3">
+               <translation x="0.0" y="0.6" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+         </group>
+         <group name="Pendulum2">
+            <translation x="0.0" y="0.0" z="0.0"/>
+            <rotation x="0.0" y="0.0" z="0.0"/>
+            <null/>
+            <group name="pendulum1">
+               <translation x="0.0" y="-0.6" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+            <group name="pendulum2">
+               <translation x="0.0" y="0.0" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+            <group name="pendulum3">
+               <translation x="0.0" y="0.6" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+         </group>
+         <group name="Pendulum3">
+            <translation x="0.6" y="0.0" z="0.0"/>
+            <rotation x="0.0" y="0.0" z="0.0"/>
+            <null/>
+            <group name="pendulum1">
+               <translation x="0.0" y="-0.6" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+            <group name="pendulum2">
+               <translation x="0.0" y="0.0" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+            <group name="pendulum3">
+               <translation x="0.0" y="0.6" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+         </group>
+      </group>
+      <group name="Pendulum3">
+         <translation x="0.0" y="0.0" z="-0.6"/>
+         <rotation x="0.0" y="0.0" z="0.0"/>
+         <null/>
+         <group name="Pendulum1">
+            <translation x="-0.6" y="0.0" z="0.0"/>
+            <rotation x="0.0" y="0.0" z="0.0"/>
+            <null/>
+            <group name="pendulum1">
+               <translation x="0.0" y="-0.6" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+            <group name="pendulum2">
+               <translation x="0.0" y="0.0" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+            <group name="pendulum3">
+               <translation x="0.0" y="0.6" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+         </group>
+         <group name="Pendulum2">
+            <translation x="0.0" y="0.0" z="0.0"/>
+            <rotation x="0.0" y="0.0" z="0.0"/>
+            <null/>
+            <group name="pendulum1">
+               <translation x="0.0" y="-0.6" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+            <group name="pendulum2">
+               <translation x="0.0" y="0.0" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+            <group name="pendulum3">
+               <translation x="0.0" y="0.6" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+         </group>
+         <group name="Pendulum3">
+            <translation x="0.6" y="0.0" z="0.0"/>
+            <rotation x="0.0" y="0.0" z="0.0"/>
+            <null/>
+            <group name="pendulum1">
+               <translation x="0.0" y="-0.6" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+            <group name="pendulum2">
+               <translation x="0.0" y="0.0" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+            <group name="pendulum3">
+               <translation x="0.0" y="0.6" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <null/>
+               <group name="dodai">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="-0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.3" height="0.005" depth="0.1">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.0025"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.02" height="0.27" depth="0.02">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.05" z="0.14"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <box width="0.54" height="0.05" depth="0.07">
+                     <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+                     <translation x="0.0" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </box>
+                  <group name="daisha">
+                     <translation x="0.0" y="0.0" z="0.35"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="translationY">
+                        <source id="0" number="2"/>
+                     </animation>
+                     <box width="0.07" height="0.05" depth="0.005">
+                        <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                        <translation x="0.02" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </box>
+                     <group name="sinsi">
+                        <translation x="0.0" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                        <animation target="rotationX">
+                           <source id="0" number="3"/>
+                        </animation>
+                        <cylinder radius="0.01" height="0.018" division="36">
+                           <color r="0" g="255" b="255" alpha="255" name="cyan"/>
+                           <translation x="0.0325" y="0.0" z="0.0"/>
+                           <rotation x="0.0" y="1.5708" z="0.0"/>
+                        </cylinder>
+                        <cylinder radius="0.0025" height="0.3" division="36">
+                           <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                           <translation x="0.037" y="0.0" z="0.15"/>
+                           <rotation x="0.0" y="0.0" z="0.0"/>
+                        </cylinder>
+                     </group>
+                  </group>
+               </group>
+            </group>
+         </group>
+      </group>
+   </scene>
+   <configuration>
+      <background>
+         <color r="255" g="255" b="255" alpha="255" name="white"/>
+      </background>
+      <baseCoordinate>
+         <gridColor r="20" g="20" b="20" alpha="255"/>
+         <gridSize>0.05</gridSize>
+         <isAxisShowing>false</isAxisShowing>
+         <isGridShowing>true</isGridShowing>
+      </baseCoordinate>
+      <light x="10.0" y="10.0" z="20.0"/>
+      <eye x="16.0" y="0.0" z="0.0"/>
+      <lookAtPoint x="0.0" y="0.0" z="0.35"/>
+      <modelUnit angle="radian" length="m"/>
+      <dataUnit angle="radian" length="m"/>
+   </configuration>
+</mikity3d>

@@ -1,0 +1,78 @@
+<mikity3d version="0.3">
+   <scene>
+      <group name="segway">
+         <translation x="0.0" y="0.0" z="0.0"/>
+         <rotation x="0.0" y="0.0" z="0.0"/>
+         <null/>
+         <group name="Body">
+            <translation x="0.0" y="0.0" z="0.5"/>
+            <rotation x="0.0" y="0.0" z="0.0"/>
+            <animation target="translationY">
+               <source id="0" number="6"/>
+            </animation>
+            <animation target="translationZ">
+               <source id="0" number="7"/>
+            </animation>
+            <animation target="rotationX">
+               <source id="0" number="3"/>
+            </animation>
+            <box width="0.5" height="3.0" depth="0.4">
+               <color r="255" g="0" b="0" alpha="255" name="red"/>
+               <translation x="0.0" y="0.0" z="0.5"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+            </box>
+            <cylinder radius="0.45" height="0.1" division="36">
+               <color r="0" g="0" b="0" alpha="255" name="black"/>
+               <translation x="0.0" y="0.0" z="-0.6"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+            </cylinder>
+         </group>
+         <group name="Whell">
+            <translation x="0.5" y="0.0" z="0.0"/>
+            <rotation x="0.0" y="0.0" z="0.0"/>
+            <animation target="translationY">
+               <source id="0" number="4"/>
+            </animation>
+            <animation target="translationZ">
+               <source id="0" number="5"/>
+            </animation>
+            <animation target="rotationX">
+               <source id="0" number="2"/>
+            </animation>
+            <cylinder radius="0.5" height="0.1" division="36">
+               <color r="0" g="0" b="255" alpha="255" name="blue"/>
+               <translation x="0.0" y="0.0" z="0.0"/>
+               <rotation x="0.0" y="1.5707964" z="0.0"/>
+            </cylinder>
+         </group>
+         <group name="Whell">
+            <translation x="-0.5" y="0.0" z="0.0"/>
+            <rotation x="0.0" y="0.0" z="0.0"/>
+            <animation target="translationY">
+               <source id="0" number="4"/>
+            </animation>
+            <animation target="translationZ">
+               <source id="0" number="5"/>
+            </animation>
+            <animation target="rotationX">
+               <source id="0" number="2"/>
+            </animation>
+            <cylinder radius="0.5" height="0.1" division="36">
+               <color r="0" g="0" b="255" alpha="255" name="blue"/>
+               <translation x="0.0" y="0.0" z="0.0"/>
+               <rotation x="0.0" y="1.5707964" z="0.0"/>
+            </cylinder>
+         </group>
+      </group>
+   </scene>
+   <configuration>
+      <background>
+         <color r="255" g="255" b="255" alpha="255" name="white"/>
+      </background>
+      <light x="10.0" y="10.0" z="20.0"/>
+      <eye x="12.0" y="15.0" z="15.0"/>
+      <lookAtPoint x="0.3" y="1.0" z="1.5"/>
+      <modelUnit angle="radian" length="m"/>
+      <dataUnit angle="radian" length="m"/>
+   </configuration>
+</mikity3d>

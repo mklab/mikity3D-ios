@@ -1,0 +1,90 @@
+<mikity3d version="0.4">
+   <scene>
+      <group name="doublePendulum">
+         <translation x="0.0" y="0.0" z="0.0"/>
+         <rotation x="0.0" y="0.0" z="0.0"/>
+         <null/>
+         <group name="base">
+            <translation x="0.0" y="0.0" z="0.0"/>
+            <rotation x="0.0" y="0.0" z="0.0"/>
+            <box width="2.0" height="0.1" depth="0.1">
+               <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+               <translation x="0.0" y="0.0" z="0.65"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+            </box>
+            <box width="0.08" height="0.6" depth="0.08">
+               <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+               <translation x="0.0" y="-0.5" z="0.3"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+            </box>
+            <box width="0.08" height="0.6" depth="0.08">
+               <color r="211" g="211" b="211" alpha="255" name="LightGray"/>
+               <translation x="0.0" y="0.5" z="0.3"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+            </box>
+            <group name="cart">
+               <translation x="0.0" y="0.0" z="0.8"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <animation target="translationY">
+                  <source id="0" number="2"/>
+               </animation>
+               <box width="0.25" height="0.2" depth="0.05">
+                  <color r="255" g="255" b="0" alpha="255" name="yellow"/>
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+               </box>
+               <group name="link1">
+                  <translation x="0.0" y="0.0" z="0.0"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+                  <animation target="rotationX">
+                     <source id="0" number="3"/>
+                  </animation>
+                  <cylinder radius="0.02" height="0.1" division="36">
+                     <color r="0" g="255" b="0" alpha="255" name="green"/>
+                     <translation x="0.025" y="0.0" z="0.0"/>
+                     <rotation x="0.0" y="1.57" z="0.0"/>
+                  </cylinder>
+                  <cylinder radius="0.01" height="0.6" division="36">
+                     <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                     <translation x="0.05" y="0.0" z="0.3"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                  </cylinder>
+                  <group name="link2">
+                     <translation x="0.0" y="0.0" z="0.6"/>
+                     <rotation x="0.0" y="0.0" z="0.0"/>
+                     <animation target="rotationX">
+                        <source id="0" number="4"/>
+                     </animation>
+                     <cylinder radius="0.02" height="0.05" division="36">
+                        <color r="0" g="255" b="0" alpha="255" name="green"/>
+                        <translation x="0.05" y="0.0" z="0.0"/>
+                        <rotation x="0.0" y="1.57" z="0.0"/>
+                     </cylinder>
+                     <cylinder radius="0.01" height="0.6" division="36">
+                        <color r="255" g="165" b="0" alpha="255" name="orange"/>
+                        <translation x="0.05" y="0.0" z="0.3"/>
+                        <rotation x="0.0" y="0.0" z="0.0"/>
+                     </cylinder>
+                  </group>
+               </group>
+            </group>
+         </group>
+      </group>
+   </scene>
+   <configuration>
+      <background>
+         <color r="255" g="255" b="255" alpha="255" name="white"/>
+      </background>
+      <baseCoordinate>
+         <gridColor r="20" g="20" b="20" alpha="255"/>
+         <gridSize>0.05</gridSize>
+         <isAxisShowing>false</isAxisShowing>
+         <isGridShowing>true</isGridShowing>
+      </baseCoordinate>
+      <light x="10.0" y="10.0" z="20.0"/>
+      <eye x="15.0" y="0.0" z="0.0"/>
+      <lookAtPoint x="0.0" y="0.0" z="1.0"/>
+      <modelUnit angle="radian" length="m"/>
+      <dataUnit angle="radian" length="m"/>
+   </configuration>
+</mikity3d>

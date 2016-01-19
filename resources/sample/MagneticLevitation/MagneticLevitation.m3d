@@ -1,0 +1,88 @@
+<mikity3d version="0.3">
+   <scene>
+      <group name="MovingObjects">
+         <translation x="0.0" y="0.0" z="0.0"/>
+         <rotation x="0.0" y="0.0" z="0.0"/>
+         <null/>
+         <group name="IronBall">
+            <translation x="0.0" y="0.0" z="0.35"/>
+            <rotation x="0.0" y="0.0" z="0.0"/>
+            <animation target="translationZ">
+               <source id="0" number="2"/>
+            </animation>
+            <sphere radius="0.05" division="36">
+               <color r="192" g="192" b="192" alpha="255"/>
+               <translation x="0.0" y="0.0" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+            </sphere>
+         </group>
+      </group>
+      <group name="NonMovingObjects">
+         <translation x="0.0" y="0.0" z="0.0"/>
+         <rotation x="0.0" y="0.0" z="0.0"/>
+         <null/>
+         <group name="LowerFlame">
+            <translation x="0.0" y="0.0" z="0.0"/>
+            <rotation x="0.0" y="0.0" z="0.0"/>
+            <box width="0.4" height="0.05" depth="0.4">
+               <color r="255" g="128" b="0" alpha="255"/>
+               <translation x="0.0" y="0.0" z="0.025"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+            </box>
+            <group name="Laser">
+               <translation x="0.0" y="0.0" z="0.05"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <box width="0.1" height="0.1" depth="0.2">
+                  <color r="0" g="0" b="0" alpha="255" name="black"/>
+                  <translation x="0.0" y="0.0" z="0.05"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+               </box>
+               <box width="0.05" height="0.01" depth="0.05">
+                  <color r="0" g="128" b="192" alpha="255"/>
+                  <translation x="0.05" y="0.0" z="0.105"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+               </box>
+               <cylinder radius="0.002" height="0.01" division="36">
+                  <color r="255" g="0" b="0" alpha="255" name="red"/>
+                  <translation x="0.0" y="0.0" z="0.105"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+               </cylinder>
+            </group>
+         </group>
+         <group name="UpperFlame">
+            <translation x="0.0" y="0.0" z="0.8"/>
+            <rotation x="0.0" y="0.0" z="0.0"/>
+            <box width="0.4" height="0.05" depth="0.4">
+               <color r="255" g="128" b="0" alpha="255"/>
+               <translation x="0.0" y="0.0" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+            </box>
+            <group name="Coil">
+               <translation x="0.0" y="0.0" z="0.0"/>
+               <rotation x="0.0" y="0.0" z="0.0"/>
+               <cylinder radius="0.07" height="0.3" division="36">
+                  <color r="128" g="64" b="0" alpha="255"/>
+                  <translation x="0.0" y="0.0" z="-0.15"/>
+                  <rotation x="0.0" y="0.0" z="0.0"/>
+               </cylinder>
+            </group>
+         </group>
+      </group>
+   </scene>
+   <configuration>
+      <background>
+         <color r="255" g="255" b="255" alpha="255" name="white"/>
+      </background>
+      <baseCoordinate>
+         <gridColor r="20" g="20" b="20" alpha="255"/>
+         <gridSize>0.05</gridSize>
+         <isAxisShowing>false</isAxisShowing>
+         <isGridShowing>true</isGridShowing>
+      </baseCoordinate>
+      <light x="10.0" y="10.0" z="20.0"/>
+      <eye x="5.0" y="3.0" z="1.0"/>
+      <lookAtPoint x="0.0" y="0.0" z="0.35"/>
+      <modelUnit angle="radian" length="m"/>
+      <dataUnit angle="radian" length="m"/>
+   </configuration>
+</mikity3d>
