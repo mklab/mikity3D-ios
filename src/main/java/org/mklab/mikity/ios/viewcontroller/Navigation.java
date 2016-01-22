@@ -1,4 +1,4 @@
-package org.mklab.mikity.ios;
+package org.mklab.mikity.ios.viewcontroller;
 
 import org.robovm.apple.foundation.NSArray;
 import org.robovm.apple.uikit.UIBarButtonItem;

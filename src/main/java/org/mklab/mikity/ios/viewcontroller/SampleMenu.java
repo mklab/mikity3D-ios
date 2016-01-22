@@ -1,12 +1,13 @@
 /**
  * 
  */
-package org.mklab.mikity.ios;
+package org.mklab.mikity.ios.viewcontroller;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.mklab.mikity.ios.DirectoryPath;
 import org.robovm.apple.foundation.NSArray;
 import org.robovm.apple.foundation.NSBundle;
 import org.robovm.apple.foundation.NSFileManager;
@@ -25,16 +26,28 @@ import org.robovm.apple.uikit.UITableViewController;
  * サンプルメニューを表すクラス
  */
 public class SampleMenu extends UITableViewController {
+	public final static int MODEL = 0;
+	public final static int SOURCE = 1;
+	
 	private List<String> contents = new ArrayList<>();
-	private int dirDepth = 0;
 	
 	/** 現在のディレクトリ */
 	private DirectoryPath currentDirectory;
 	
+	/** ファイルタイプ */
+	private int fileType;
+	
+	/** 表示元のViewController */
+	private Menu menu;
+	
+	public SampleMenu(Menu menu, final int fileType, DirectoryPath path) {
+		this.menu = menu;
+		this.fileType = fileType;
+		this.currentDirectory = path;
+	}
+	
 	@Override
 	public void viewDidLoad() {
-		UITableView tableView = getTableView();
-		
 		NSArray<NSURL> nsa = NSFileManager.getDefaultManager().getURLsForDirectory(NSSearchPathDirectory.ApplicationDirectory, NSSearchPathDomainMask.UserDomainMask);
 		NSURL nsu = (NSURL) nsa.first();
 		String snsu = nsu.getAbsoluteString() + "sample";
@@ -49,7 +62,6 @@ public class SampleMenu extends UITableViewController {
 		NSURL reURL = NSBundle.getMainBundle().findResourceURL("sample", "");
 		String testr = reURL.getHost();
 		
-		this.currentDirectory = new DirectoryPath("sample");
 		updateDataSouce();
 		
 //		List<String> res = NSBundle.getMainBundle().findResourcesPaths("", this.currentDirectory.getDirectoryName());
@@ -88,16 +100,11 @@ public class SampleMenu extends UITableViewController {
 		
 		if (cell == null) {
 			cell = new UITableViewCell(UITableViewCellStyle.Default, "SampleMenu");
-//			cell.setAccessoryType(UITableViewCellAccessoryType.DetailDisclosureButton);
 			
 			cell.setSelectionStyle(UITableViewCellSelectionStyle.Default);			
 		}
 		
-		if (indexPath.getItem() == 0) {
-			cell.getTextLabel().setText("..");
-		} else {
-			cell.getTextLabel().setText(this.contents.get(indexPath.getItem()-1));
-		}
+		cell.getTextLabel().setText(this.contents.get(indexPath.getItem()));
 		
 		return cell;
 	}
@@ -107,13 +114,19 @@ public class SampleMenu extends UITableViewController {
 	 */
 	@Override
 	public void didSelectRow(UITableView tableView, NSIndexPath indexPath) {
-		if (indexPath.getItem() == 0) {
+		if (this.contents.get(indexPath.getItem()).equals("..")) {
 			this.currentDirectory.backDirectory();
 			updateDataSouce();
-		} else if (this.contents.get(indexPath.getItem()-1).contains(".")) {
-			
+		} else if (this.contents.get(indexPath.getItem()).contains(".")) {
+			String selectFile = this.contents.get(indexPath.getItem());
+			if (this.fileType == MODEL) {
+				this.menu.setModel(selectFile);
+			} else if (this.fileType == SOURCE) {
+				this.menu.setSource(selectFile);
+			}
+			dismissViewController(true, null);
 		} else {
-			this.currentDirectory.accessDirectory(this.contents.get(indexPath.getItem()-1));
+			this.currentDirectory.accessDirectory(this.contents.get(indexPath.getItem()));
 			updateDataSouce();
 		}
 		
@@ -123,11 +136,22 @@ public class SampleMenu extends UITableViewController {
 	private void updateDataSouce() {
 		this.contents.clear();
 		List<String> res = NSBundle.getMainBundle().findResourcesPaths("", this.currentDirectory.getPathName());
+		this.contents.add("..");
 
 		for(String dir : res) {
 			int res_last = dir.lastIndexOf("/");
 			String lastString = dir.substring(res_last+1);
-			this.contents.add(lastString);
+			
+			if (this.fileType == MODEL) {
+				if (!lastString.endsWith(".mat") && !lastString.endsWith(".csv")
+												 && !lastString.endsWith(".txt")) {
+					this.contents.add(lastString);
+				}
+			} else if (this.fileType == SOURCE) {
+				if (!lastString.endsWith(".m3d") && !lastString.endsWith(".stl")) {
+					this.contents.add(lastString);
+				}
+			}
 		}
 	}
 }
