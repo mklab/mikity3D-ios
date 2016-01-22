@@ -39,6 +39,11 @@ public class DirectoryPath {
 		}
 	}
 	
+	/**
+	 * ルートディレクトリであるかを判定する
+	 * 
+	 * @return カレントディレクトリがルートディレクトリである場合true
+	 */
 	public boolean isRoot() {
 		return this.pathName.equals(this.root);
 	}

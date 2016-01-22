@@ -16,6 +16,8 @@ import org.mklab.mikity.model.xml.simplexml.model.GroupModel;
 import org.mklab.mikity.view.renderer.ObjectRenderer;
 
 import org.robovm.apple.glkit.GLKView;
+import org.robovm.apple.glkit.GLKViewController;
+import org.robovm.apple.glkit.GLKViewDelegate;
 
 /**
  * OpenGL用のキャンバスを表すクラスです。
@@ -83,7 +85,7 @@ public class OpenglesObjectRenderer implements ObjectRenderer {
     GL.glEnable(GL.GL_NORMALIZE);
     GL.glEnable(GL.GL_LIGHT0); //0番のライトを有効にします
     GL.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 100.0f);
-        
+    
     final LightModel light = this.configuration.getLight();
     final float[] lightLocation = new float[]{light.getX(), light.getY(), light.getZ(), 1.0f};
     GL.glLightfv(GL.GL_LIGHT0, GL.GL_POSITION, lightLocation, 0); // 平行光源を設定します 
@@ -203,7 +205,7 @@ public class OpenglesObjectRenderer implements ObjectRenderer {
    * {@inheritDoc}
    */
   public void updateDisplay() {
-//    this.glkView.display();;//再描画
+    this.glkView.display();//再描画
   }
   
   /**

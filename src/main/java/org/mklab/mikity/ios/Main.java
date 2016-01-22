@@ -1,6 +1,9 @@
 package org.mklab.mikity.ios;
 
-import org.mklab.mikity.ios.sample.GLRendererSample;
+import org.mklab.mikity.ios.messenger.CanvasMenuInterface;
+import org.mklab.mikity.ios.viewcontroller.Canvas;
+import org.mklab.mikity.ios.viewcontroller.Menu;
+import org.mklab.mikity.ios.viewcontroller.Navigation;
 import org.robovm.apple.foundation.NSArray;
 import org.robovm.apple.foundation.NSAutoreleasePool;
 import org.robovm.apple.glkit.GLKView;
@@ -29,13 +32,18 @@ public class Main extends UIApplicationDelegateAdapter implements GLKViewControl
 		EAGLContext context = new EAGLContext(EAGLRenderingAPI.OpenGLES1);
 		GLKView view = new GLKView(UIScreen.getMainScreen().getBounds(), context);
 		
-		GLRendererSample viewController = new GLRendererSample();
+		CanvasMenuInterface messenger = new CanvasMenuInterface();
+		
+		Canvas viewController = new Canvas(messenger);
 		viewController.viewDidLoad();
 		view.setDelegate(viewController);
 		
 		UISplitViewController split = new UISplitViewController();
 		
-		Menu menu = new Menu();
+		Menu menu = new Menu(messenger);
+		
+		messenger.setCanvas(viewController);
+		messenger.setMenu(menu);
 		
 		viewController.setView(view);
 		
@@ -51,7 +59,6 @@ public class Main extends UIApplicationDelegateAdapter implements GLKViewControl
 		viewController.getNavigationItem().setRightBarButtonItems(navi.getPlayerButtons());
 		
 		viewController.setDelegate(this);
-		viewController.setPreferredFramesPerSecond(60);
 		this.window.setRootViewController(split);
 		
 		this.window.setBackgroundColor(UIColor.white());
