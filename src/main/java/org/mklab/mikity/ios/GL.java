@@ -2,6 +2,7 @@ package org.mklab.mikity.ios;
 
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
+import java.nio.IntBuffer;
 
 import org.robovm.rt.bro.*;
 import org.robovm.rt.bro.annotation.*;
@@ -28,6 +29,7 @@ public class GL {
 	public static final int GL_NORMALIZE = 0x00000ba1;
 	public static final int GL_LIGHT0 = 0x00004000;
 	public static final int GL_FRONT = 0x00000404;
+	public static final int GL_BACK = 0x00000405;
 	public static final int GL_SHININESS = 0x00001601;
 	public static final int GL_POSITION = 0x00001203;
 	public static final int GL_SPECULAR = 0x00001202;
@@ -41,6 +43,14 @@ public class GL {
 	public static final int GL_TRIANGLE_STRIP = 0x00000005;
 	public static final int GL_UNSIGNED_BYTE = 0x00001401;
 	public static final int GL_FRONT_AND_BACK = 0x00000408;
+	public static final int GL_CULL_FACE = 0x00000b44;
+	public static final int GL_CCW = 0x00000901;
+	public static final int GL_RENDERBUFFER = 0x00008d41;
+	public static final int GL_DEPTH_COMPONENT16 = 0x000081a5;
+	public static final int GL_FRAMEBUFFER = 0x00008d40;
+	public static final int GL_DEPTH_ATTACHMENT = 0x00008d00;
+	public static final int GL_RGBA = 0x00001908;
+	public static final int GL_COLOR_ATTACHMENT0 = 0x00008ce0;
 
 	@Bridge
 	public static native void glClearColor(float red, float green, float blue, float alpha);
@@ -114,4 +124,27 @@ public class GL {
 	@Bridge
 	public static native void glMaterialfv(int glFrontAndBack, int glAmbient, float[] fs, int i);
 	
+	@Bridge
+	public static native void glCullFace(int mode);
+	
+	@Bridge
+	public static native void glFrontFace(int mode);
+	
+	@Bridge
+	public static native void glDisable(int mode);
+	
+	@Bridge
+	public static native void glDeleteRenderbuffers(int n, IntBuffer renderbuffers);
+	
+	@Bridge
+	public static native void glGenRenderbuffers(int n, IntBuffer renderbuffers);
+	
+	@Bridge
+	public static native void glBindRenderbuffer(int target, int renderbuffer);
+	
+	@Bridge
+	public static native void glFramebufferRenderbuffer(int target, int attachment, int renderbuffertarget, int renderbuffer);
+	
+	@Bridge
+	public static native void glRenderbufferStorage(int target, int internalformat, int width, int height);
 }

@@ -1,5 +1,6 @@
 package org.mklab.mikity.ios.view.renderer.opengles;
 
+import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,10 +15,11 @@ import org.mklab.mikity.model.xml.simplexml.config.LookAtPointModel;
 import org.mklab.mikity.model.xml.simplexml.model.ColorModel;
 import org.mklab.mikity.model.xml.simplexml.model.GroupModel;
 import org.mklab.mikity.view.renderer.ObjectRenderer;
-
+import org.robovm.apple.coregraphics.CGRect;
 import org.robovm.apple.glkit.GLKView;
 import org.robovm.apple.glkit.GLKViewController;
 import org.robovm.apple.glkit.GLKViewDelegate;
+import org.robovm.apple.uikit.UIScreen;
 
 /**
  * OpenGL用のキャンバスを表すクラスです。
@@ -60,6 +62,10 @@ public class OpenglesObjectRenderer implements ObjectRenderer {
   private float[] lightAmbient = {0.2f, 0.2f, 0.2f, 1.0f};
   
   private GLKView glkView;
+  
+  private static IntBuffer depthBuffer = IntBuffer.allocate(1);
+  private static IntBuffer colorBuffer = IntBuffer.allocate(1);
+  private static IntBuffer frameBuffer = IntBuffer.allocate(1);
 
   /**
    * 新しく生成された<code>OpenglesModelRenderer</code>オブジェクトを初期化します。
@@ -86,37 +92,51 @@ public class OpenglesObjectRenderer implements ObjectRenderer {
     GL.glEnable(GL.GL_LIGHT0); //0番のライトを有効にします
     GL.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 100.0f);
     
-    final LightModel light = this.configuration.getLight();
-    final float[] lightLocation = new float[]{light.getX(), light.getY(), light.getZ(), 1.0f};
-    GL.glLightfv(GL.GL_LIGHT0, GL.GL_POSITION, lightLocation, 0); // 平行光源を設定します 
-    GL.glLightfv(GL.GL_LIGHT0, GL.GL_SPECULAR, this.lightSpecular, 0); // 反射光の強さを設定します 
-    GL.glLightfv(GL.GL_LIGHT0, GL.GL_DIFFUSE, this.lightDiffuse, 0); // 拡散光の強さを設定します 
-    GL.glLightfv(GL.GL_LIGHT0, GL.GL_AMBIENT, this.lightAmbient, 0); // 環境光の強さを設定します
+//    final LightModel light = this.configuration.getLight();
+//    final float[] lightLocation = new float[]{light.getX(), light.getY(), light.getZ(), 1.0f};
+//    GL.glLightfv(GL.GL_LIGHT0, GL.GL_POSITION, lightLocation, 0); // 平行光源を設定します 
+//    GL.glLightfv(GL.GL_LIGHT0, GL.GL_SPECULAR, this.lightSpecular, 0); // 反射光の強さを設定します 
+//    GL.glLightfv(GL.GL_LIGHT0, GL.GL_DIFFUSE, this.lightDiffuse, 0); // 拡散光の強さを設定します 
+//    GL.glLightfv(GL.GL_LIGHT0, GL.GL_AMBIENT, this.lightAmbient, 0); // 環境光の強さを設定します
   }
 
   /**
    * {@inheritDoc}
    */
   public void onDrawFrame(GL gl) {
+	CGRect bounds = UIScreen.getMainScreen().getBounds();
+	createDepthBuffer((int)bounds.getWidth()*2, (int)bounds.getHeight()*2);
+//	createColorBuffer((int)bounds.getWidth()*2, (int)bounds.getHeight()*2);
+
+    GL.glEnable(GL.GL_LIGHT0); //0番のライトを有効にします
+	GL.glEnable(GL.GL_LIGHTING); //光源を有効にします 
+    GL.glEnable(GL.GL_COLOR_MATERIAL); //カラーマテリアルを有効にします
+    GL.glEnable(GL.GL_NORMALIZE);
+    GL.glEnable(GL.GL_CULL_FACE); // 裏返ったポリゴンを描画しません 
+
     final ColorModel background = this.configuration.getBackground().getColor();
     GL.glClearColor(background.getRf(), background.getGf(), background.getBf(), background.getAlphaf());  
-
     GL.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
 
     GL.glMatrixMode(GL.GL_PROJECTION);
     GL.glLoadIdentity();
     GLU.gluPerspective(gl, 10.0f, this.aspect, 0.1f, 1000.0f);
-
-    GL.glEnable(GL.GL_DEPTH_TEST); // 奥行き判定を有効にします 
-    // gl10.glEnable(GL10.GL_CULL_FACE); // 裏返ったポリゴンを描画しません 
-
+    
     // 光源位置の指定
     GL.glMatrixMode(GL.GL_MODELVIEW);
-    GL.glLoadIdentity();
+    GL.glLoadIdentity(); 
+    
     final LightModel light = this.configuration.getLight();
     final float[] lightLocation = new float[]{light.getX(), light.getY(), light.getZ(), 1.0f};
     GL.glLightfv(GL.GL_LIGHT0, GL.GL_POSITION, lightLocation, 0); // 平行光源を設定します 
-
+    GL.glLightfv(GL.GL_LIGHT0, GL.GL_SPECULAR, this.lightSpecular, 0); // 反射光の強さを設定します 
+    GL.glLightfv(GL.GL_LIGHT0, GL.GL_DIFFUSE, this.lightDiffuse, 0); // 拡散光の強さを設定します 
+    GL.glLightfv(GL.GL_LIGHT0, GL.GL_AMBIENT, this.lightAmbient, 0); // 環境光の強さを設定します
+    
+//    GL.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 100.0f);
+    setMaterial(0.5f, 0.5f, 0.5f);
+    
+    // ビュー変換
     final EyeModel eye = this.configuration.getEye();
     final LookAtPointModel lookAtPoint = this.configuration.getLookAtPoint();
     GLU.gluLookAt(gl, eye.getX(), eye.getY(), eye.getZ(), lookAtPoint.getX(), lookAtPoint.getY(), lookAtPoint.getZ(), 0.0F, 0.0F, 1.0F);
@@ -126,6 +146,8 @@ public class OpenglesObjectRenderer implements ObjectRenderer {
     GL.glRotatef(this.rotationZ, 0.0f, 0.0f, 1.0f);
 
     GL.glScalef(this.scale, this.scale, this.scale);
+    
+//    GL.glEnable(GL.GL_DEPTH_TEST); // 奥行き判定を有効にします 
 
     final boolean isAxisShowing = this.configuration.getBaseCoordinate().isAxisShowing();
     
@@ -137,7 +159,70 @@ public class OpenglesObjectRenderer implements ObjectRenderer {
     }
     
     this.grid.display(gl);
+    
+//    onSurfaceChanged(null, (int)bounds.getWidth(), (int)bounds.getHeight());
   }
+  
+  private void createDepthBuffer(int width, int height) {
+	  if (depthBuffer != null) {
+		  GL.glDeleteRenderbuffers(1, depthBuffer);
+		  depthBuffer = IntBuffer.allocate(1);
+	  }
+	  
+	  GL.glGenRenderbuffers(1, depthBuffer);
+	  GL.glBindRenderbuffer(GL.GL_RENDERBUFFER, depthBuffer.get(0));
+	  GL.glRenderbufferStorage(GL.GL_RENDERBUFFER, GL.GL_DEPTH_COMPONENT16, width, height);
+	  GL.glFramebufferRenderbuffer(GL.GL_FRAMEBUFFER, GL.GL_DEPTH_ATTACHMENT, GL.GL_RENDERBUFFER, depthBuffer.get(0));
+	  GL.glEnable(GL.GL_DEPTH_TEST); // 奥行き判定を有効にします 
+  }
+  
+  private void createColorBuffer(int width, int height) {
+	  if (colorBuffer != null) {
+		  GL.glDeleteRenderbuffers(1, colorBuffer);
+		  colorBuffer = IntBuffer.allocate(1);
+	  }
+	  
+	  GL.glGenRenderbuffers(1, colorBuffer);
+	  GL.glBindRenderbuffer(GL.GL_RENDERBUFFER, colorBuffer.get(0));
+	  GL.glRenderbufferStorage(GL.GL_FRAMEBUFFER, GL.GL_RGBA, width, height);
+	  GL.glFramebufferRenderbuffer(GL.GL_FRAMEBUFFER, GL.GL_COLOR_ATTACHMENT0,
+			  GL.GL_RENDERBUFFER, colorBuffer.get(0));
+  }
+  
+  private void createDepthColorBuffer() {
+	  GL.glGenRenderbuffers(1, colorBuffer);
+	  GL.glBindRenderbuffer(GL.GL_RENDERBUFFER, colorBuffer.get(0));
+	  
+	  GL.glGenRenderbuffers(1, depthBuffer);
+	  GL.glBindRenderbuffer(GL.GL_RENDERBUFFER, depthBuffer.get(0));
+	  
+	  GL.glGenRenderbuffers(1, frameBuffer);
+	  GL.glBindRenderbuffer(GL.GL_RENDERBUFFER, frameBuffer.get(0));
+	  
+	  GL.glFramebufferRenderbuffer(GL.GL_FRAMEBUFFER, GL.GL_COLOR_ATTACHMENT0, GL.GL_RENDERBUFFER, colorBuffer.get(0));
+	  
+	  GL.glFramebufferRenderbuffer(GL.GL_FRAMEBUFFER, GL.GL_DEPTH_ATTACHMENT, GL.GL_RENDERBUFFER, depthBuffer.get(0));
+  }
+  
+	/**
+	 * マテリアルを設定します。
+	 * 
+	 * @param r
+	 * @param g
+	 * @param b
+	 */
+	private void setMaterial(float r, float g, float b) {
+		float a = 1.0f;
+		// マテリアルの環境光色の指定
+		GL.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, new float[] { r, g, b, a }, 0);
+
+		// マテリアルの拡散光色の指定
+		GL.glMaterialfv(GL.GL_FRONT, GL.GL_DIFFUSE, new float[] { r, g, b, a }, 0);
+
+		// マテリアルの鏡面光色と鏡面指数の指定
+		GL.glMaterialfv(GL.GL_FRONT, GL.GL_SPECULAR, new float[] { r, g, b, a }, 0);
+		GL.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 100.0f);
+	}
 
   /**
    * {@inheritDoc}

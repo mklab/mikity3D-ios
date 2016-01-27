@@ -32,6 +32,7 @@ import org.robovm.apple.uikit.UIGestureRecognizer;
 import org.robovm.apple.uikit.UIGestureRecognizerDelegate;
 import org.robovm.apple.uikit.UIGestureRecognizerState;
 import org.robovm.apple.uikit.UIPanGestureRecognizer;
+import org.robovm.apple.uikit.UIPinchGestureRecognizer;
 import org.robovm.apple.uikit.UIScreen;
 import org.robovm.apple.uikit.UITapGestureRecognizer;
 import org.robovm.apple.uikit.UITouch;
@@ -43,15 +44,19 @@ import org.robovm.rt.bro.annotation.Callback;
 /**
  * 
  */
-public class Canvas extends GLKViewController implements UIGestureRecognizerDelegate {
+public class Canvas extends GLKViewController {
 	/** レンダー */
 	private OpenglesObjectRenderer objectRenderer;
 	
 	/** 設定モデル */
 	private ConfigurationModel configuration;
 	
-	float prevX = 0;
-	float prevY = 0;
+	private float prevX = 0;
+	private float prevY = 0;
+	private boolean rotating;
+	private boolean scaling;
+	
+	private double scaleValue = 1;
 	
 	Timer timer = new Timer();
 
@@ -86,6 +91,9 @@ public class Canvas extends GLKViewController implements UIGestureRecognizerDele
 	
 	public Canvas(CanvasMenuInterface messenger) {
 		this.messenger = messenger;
+		
+		this.scaling = false;
+		this.rotating = false;
 	}
 	
 	@Override
@@ -98,27 +106,15 @@ public class Canvas extends GLKViewController implements UIGestureRecognizerDele
 	    configuration.setLight(new LightModel(10.0f, 10.0f, 20.0f));
 
 	    this.objectRenderer = new OpenglesObjectRenderer((GLKView) getView(), configuration);
-	    
-	    
-	    UIPanGestureRecognizer panGesture = new UIPanGestureRecognizer();
-	    Selector selector = Selector.register("handlePan:");
-	    panGesture.addTarget(this, selector);
-	    panGesture.setDelegate(this);
-	    getView().addGestureRecognizer(panGesture);
-	    
-//	    UITapGestureRecognizer tapGesture = new UITapGestureRecognizer();
-//	    tapGesture.addTarget(this, Selector.register("handleTap:"));
-	    
-//	    tapGesture.setNumberOfTapsRequired(1);
-//	    getView().addGestureRecognizer(tapGesture);
-	    
+
+		this.objectRenderer.onSurfaceCreated(null);
 		CGRect bounds = UIScreen.getMainScreen().getBounds();
 		this.objectRenderer.onSurfaceChanged(null, (int)bounds.getWidth(), (int)bounds.getHeight());
-		this.objectRenderer.onSurfaceCreated(null);
 	}
 	
 	@Override
 	public void draw(GLKView view, CGRect rect) {
+//		this.objectRenderer.onSurfaceCreated(null);
 		this.objectRenderer.onDrawFrame(null);
 	}
 	
@@ -427,54 +423,54 @@ public class Canvas extends GLKViewController implements UIGestureRecognizerDele
 		this.pausedTime = pausedTime;
 	}
 	
-	@Method
 	public void handlePan(UIPanGestureRecognizer gestureRecognizer) {
-		if (gestureRecognizer.getState() == UIGestureRecognizerState.Began 
-				|| gestureRecognizer.getState() == UIGestureRecognizerState.Changed) {
-			CGPoint translation = gestureRecognizer.getTranslation(getView());
-				
-			float rotationY = (float) (translation.getY() / 5);
-			float rotationZ = (float) (translation.getX() / 5);
-			this.objectRenderer.rotateY(rotationY);
-			this.objectRenderer.rotateZ(rotationZ);
+		final int touchCount = (int) gestureRecognizer.getNumberOfTouches();
+		CGPoint translation = gestureRecognizer.getTranslation(getView());
+		final float moveX = (float) translation.getX() - this.prevX;
+		final float moveY = (float) translation.getY() - this.prevY;
+		
+		if (gestureRecognizer.getState() == UIGestureRecognizerState.Began) {
+			this.rotating = true;
+			this.prevX = (float) translation.getX();
+			this.prevY = (float) translation.getY();
+		} else if (gestureRecognizer.getState() == UIGestureRecognizerState.Changed) {
+			if ((this.rotating) && (touchCount == 1)) {
+				this.prevX = (float) translation.getX();
+				this.prevY = (float) translation.getY();
+				float rotationY = moveY / 5;
+				float rotationZ = moveX / 5;
+				this.objectRenderer.rotateY(rotationY);
+				this.objectRenderer.rotateZ(rotationZ);
+				this.rotating = true;
+			} 
+			else if ((touchCount == 2) && !this.scaling) {
+				float translationY = moveX / 10000;
+				float translationZ = moveY / 10000;
+				this.objectRenderer.translateY(translationY);
+				this.objectRenderer.translateZ(translationZ);
+				this.rotating = false;
+			}
+		} else if (gestureRecognizer.getState() == UIGestureRecognizerState.Ended) {
+			this.prevX = (float) translation.getX();
+			this.prevY = (float) translation.getY();
+			this.rotating = false;
 		}
+		this.objectRenderer.updateDisplay();
 	}
 	
-	@Callback @BindSelector("handleTap:")
-	private static void handleTap(Canvas self, Selector cmd, UITapGestureRecognizer gestureRecognizer) {
-		String test = gestureRecognizer.toString();
-	}
-
-	@Override
-	public boolean shouldBegin(UIGestureRecognizer gestureRecognizer) {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	public boolean shouldRecognizeSimultaneously(UIGestureRecognizer gestureRecognizer,
-			UIGestureRecognizer otherGestureRecognizer) {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	public boolean shouldRequireFailure(UIGestureRecognizer gestureRecognizer,
-			UIGestureRecognizer otherGestureRecognizer) {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	public boolean shouldBeRequiredToFail(UIGestureRecognizer gestureRecognizer,
-			UIGestureRecognizer otherGestureRecognizer) {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	public boolean shouldReceiveTouch(UIGestureRecognizer gestureRecognizer, UITouch touch) {
-		// TODO Auto-generated method stub
-		return true;
+	public void handlePinch(UIPinchGestureRecognizer gestureRecognizer) {
+		if (gestureRecognizer.getState() == UIGestureRecognizerState.Began) {
+			this.rotating = false;
+			this.scaling = true;
+		} else if (gestureRecognizer.getState() == UIGestureRecognizerState.Changed) {
+			this.objectRenderer.setScale((float) gestureRecognizer.getScale());
+			
+			CGPoint location = gestureRecognizer.getLocationInView(getView());
+			this.prevX = (float) location.getX();
+			this.prevY = (float) location.getY();
+		} else if (gestureRecognizer.getState() == UIGestureRecognizerState.Ended) {
+			this.scaling = false;
+		}
+		this.objectRenderer.updateDisplay();
 	}
 }

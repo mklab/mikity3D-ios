@@ -135,7 +135,7 @@ public class OpenglesGroupObject implements GroupObject, OpenglesObject {
    * {@inheritDoc}
    */
   public void display(GL gl) {
-    gl.glPushMatrix();
+    GL.glPushMatrix();
 
     if (this.baseCoordinate != null) {
       applyCoordinate(gl, this.baseCoordinate);
@@ -147,7 +147,7 @@ public class OpenglesGroupObject implements GroupObject, OpenglesObject {
       object.display(gl);
     }
 
-    gl.glPopMatrix();
+    GL.glPopMatrix();
   }
   
   /**
@@ -159,10 +159,10 @@ public class OpenglesGroupObject implements GroupObject, OpenglesObject {
   private void applyCoordinate(GL gl, Coordinate coordinateArg) {
     final TranslationModel translation = coordinateArg.getTranslation();
     final RotationModel rotation = coordinateArg.getRotation();
-    gl.glTranslatef(translation.getX(), translation.getY(), translation.getZ());
-    gl.glRotatef((float)Math.toDegrees(rotation.getX()), 1.0f, 0.0f, 0.0f);
-    gl.glRotatef((float)Math.toDegrees(rotation.getY()), 0.0f, 1.0f, 0.0f);
-    gl.glRotatef((float)Math.toDegrees(rotation.getZ()), 0.0f, 0.0f, 1.0f);
+    GL.glTranslatef(translation.getX(), translation.getY(), translation.getZ());
+    GL.glRotatef((float)Math.toDegrees(rotation.getX()), 1.0f, 0.0f, 0.0f);
+    GL.glRotatef((float)Math.toDegrees(rotation.getY()), 0.0f, 1.0f, 0.0f);
+    GL.glRotatef((float)Math.toDegrees(rotation.getZ()), 0.0f, 0.0f, 1.0f);
   }
 
   /**

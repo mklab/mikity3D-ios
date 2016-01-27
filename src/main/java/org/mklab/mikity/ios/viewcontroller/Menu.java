@@ -147,9 +147,7 @@ public class Menu extends UIViewController{
 	public void setModel(String selectFile) {
 		setModelLabel(selectFile);
 		
-		// TODO Canvasに通知
 		this.messenger.readModel(this.resourcePath, selectFile);
-		
 	}
 	
 	/**

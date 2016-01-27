@@ -63,22 +63,6 @@ public class SampleMenu extends UITableViewController {
 		String testr = reURL.getHost();
 		
 		updateDataSouce();
-		
-//		List<String> res = NSBundle.getMainBundle().findResourcesPaths("", this.currentDirectory.getDirectoryName());
-//		for(String dir : res) {
-//			int res_last = dir.lastIndexOf("/");
-//			String lastString = dir.substring(res_last+1);
-//			this.contents.add(lastString);
-//		}
-//		int res_last = res.get(0).lastIndexOf("/");
-//		String lastString = res.get(0).substring(res_last+1);
-//		List<String> res2 = NSBundle.getMainBundle().findResourcesPaths("", "sample"+res.get(0).substring(res_last));
-//		
-		
-//			for(NSURL nss : NSFileManager.getDefaultManager().getContentsOfDirectoryAtPath(snsu)) {
-//			}
-		
-//		File newFile = new File(snsu);
 	}
 
 	
