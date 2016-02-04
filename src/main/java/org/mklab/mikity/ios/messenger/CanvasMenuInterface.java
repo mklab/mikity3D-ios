@@ -11,7 +11,7 @@ import org.mklab.mikity.model.xml.simplexml.Mikity3DModel;
 import org.robovm.apple.foundation.NSBundle;
 
 /**
- * ファイルの読み込み、設定の割り当てを行うインターフェース
+ * CanvasMenu間のインターフェースを表すクラス
  */
 public class CanvasMenuInterface {
 	private Canvas canvas;
@@ -36,14 +36,28 @@ public class CanvasMenuInterface {
 	}
 	
 	public void readModel(DirectoryPath directory, String selectFile) {
+		String path = readFilePath(directory, selectFile);
+		File modelFile = new File(path);
+		
+		this.canvas.loadModelData(modelFile);
+	}
+	
+	public void readSource(DirectoryPath directory, String selectFile) {
+		String path = readFilePath(directory, selectFile);
+		File sourceFile = new File(path);
+		
+		this.canvas.readSourceData("0", sourceFile, path);
+		this.canvas.addSource("0");
+	}
+	
+	private String readFilePath(DirectoryPath directory, String selectFile) {
 		String[] selectFileName = selectFile.split(Pattern.quote("."));
 		
 		String fullPath = directory.getPathName() + "/" + selectFileName[0];
 		
 		String path = NSBundle.getMainBundle().findResourcePath(fullPath, selectFileName[1]);
-		File modelFile = new File(path);
 		
-		this.canvas.loadModelData(modelFile);
+		return path;
 	}
 	
 	public void setModelData(Mikity3DModel model) {
@@ -52,6 +66,14 @@ public class CanvasMenuInterface {
 		
 		this.menu.setGridShowing(isGridShowing);
 		this.menu.setAxisShowing(isAxisShowing);
+	}
+	
+	public void setGridShowing(boolean isGridShowing) {
+		this.canvas.setGridShowing(isGridShowing);
+	}
+	
+	public void setAxisShowing(boolean isAxisShowing) {
+		this.canvas.setAxisShowing(isAxisShowing);
 	}
 	
 }

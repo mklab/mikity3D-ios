@@ -150,11 +150,11 @@ public class Canvas extends GLKViewController {
 	 */
 	public void readSourceData(final String sourceId, final File file, final String sourceFilePath) {
 		try {
-			if (sourceFilePath.toLowerCase().endsWith(".mat") || sourceFilePath.startsWith("/document")) { //$NON-NLS-1$ //$NON-NLS-2$
+			if (sourceFilePath.toLowerCase().endsWith(".mat")) { //$NON-NLS-1$ //$NON-NLS-2$
 				this.sourceData.put(sourceId, (DoubleMatrix)MatxMatrix.readMatFormat(file));
-			} else if (sourceFilePath.toLowerCase().endsWith(".csv") || sourceFilePath.startsWith("/document")) { //$NON-NLS-1$ //$NON-NLS-2$
+			} else if (sourceFilePath.toLowerCase().endsWith(".csv")) { //$NON-NLS-1$ //$NON-NLS-2$
 				this.sourceData.put(sourceId, DoubleMatrix.readCsvFormat(file).transpose());
-			} else if (sourceFilePath.toLowerCase().endsWith(".txt") || sourceFilePath.startsWith("/document")) { //$NON-NLS-1$ //$NON-NLS-2$
+			} else if (sourceFilePath.toLowerCase().endsWith(".txt")) { //$NON-NLS-1$ //$NON-NLS-2$
 				this.sourceData.put(sourceId, DoubleMatrix.readSsvFormat(file).transpose());
 			} else {
 				this.sourceData.put(sourceId, DoubleMatrix.readSsvFormat(file).transpose());

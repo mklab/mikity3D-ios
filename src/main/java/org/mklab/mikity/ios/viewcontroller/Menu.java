@@ -15,6 +15,7 @@ import org.robovm.apple.uikit.UIButtonType;
 import org.robovm.apple.uikit.UIColor;
 import org.robovm.apple.uikit.UIControl;
 import org.robovm.apple.uikit.UIControl.OnTouchUpInsideListener;
+import org.robovm.apple.uikit.UIControl.OnValueChangedListener;
 import org.robovm.apple.uikit.UIControlState;
 import org.robovm.apple.uikit.UIEvent;
 import org.robovm.apple.uikit.UIFont;
@@ -35,6 +36,7 @@ public class Menu extends UIViewController{
 	private UILabel sampleModelLabel;
 	
 //	private UISwitch accelerometerSwitch;
+	private UISwitch rockRotationSwitch;
 	private UISwitch gridShowingSwitch;
 	private UISwitch axisShowingSwitch;
 	
@@ -84,19 +86,32 @@ public class Menu extends UIViewController{
 		scrollView.addSubview(accelerometerSwitch);
 		
 		UILabel rockRotation = createLabel("rotation rock", new CGRect(10, 270, 150, 30));
-		UISwitch rockRotationSwitch = new UISwitch(new CGRect(170, 270, 50, 30));
+		this.rockRotationSwitch = new UISwitch(new CGRect(170, 270, 50, 30));
+		rockRotationSwitch.setOn(shouldAutorotate());
 		scrollView.addSubview(rockRotation);
 		scrollView.addSubview(rockRotationSwitch);
 		
 		UILabel gridShowing = createLabel("grid showing", new CGRect(10, 310, 150, 30));
 		this.gridShowingSwitch = new UISwitch(new CGRect(170, 310, 50, 30));
 		this.gridShowingSwitch.setOn(false);
+		this.gridShowingSwitch.addOnValueChangedListener(new OnValueChangedListener() {
+			@Override
+			public void onValueChanged(UIControl control) {
+				Menu.this.messenger.setGridShowing(Menu.this.gridShowingSwitch.isOn());
+			}
+		});
 		scrollView.addSubview(gridShowing);
 		scrollView.addSubview(this.gridShowingSwitch);
 		
 		UILabel axisShowing = createLabel("axis showing", new CGRect(10, 350, 150, 30));
 		this.axisShowingSwitch = new UISwitch(new CGRect(170, 350, 50, 30));
 		this.axisShowingSwitch.setOn(false);
+		this.axisShowingSwitch.addOnValueChangedListener(new OnValueChangedListener() {
+			@Override
+			public void onValueChanged(UIControl control) {
+				Menu.this.messenger.setAxisShowing(Menu.this.axisShowingSwitch.isOn());
+			}
+		});
 		scrollView.addSubview(axisShowing);
 		scrollView.addSubview(this.axisShowingSwitch);
 		
@@ -139,6 +154,10 @@ public class Menu extends UIViewController{
 		scrollView.addSubview(sampleSourceLabel);
 	}
 	
+	public boolean isRockRotation() {
+		return this.rockRotationSwitch.isOn();
+	}
+	
 	/**
 	 * モデルを設定する
 	 * 
@@ -158,7 +177,7 @@ public class Menu extends UIViewController{
 	public void setSource(String selectFile) {
 		setSourceLabel(selectFile);
 		
-		// TODO Canvasに通知
+		this.messenger.readSource(this.resourcePath, selectFile);
 		
 	}
 	
