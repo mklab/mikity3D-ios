@@ -92,12 +92,6 @@ public class OpenglesObjectRenderer implements ObjectRenderer {
     GL.glEnable(GL.GL_LIGHT0); //0番のライトを有効にします
     GL.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 100.0f);
     
-//    final LightModel light = this.configuration.getLight();
-//    final float[] lightLocation = new float[]{light.getX(), light.getY(), light.getZ(), 1.0f};
-//    GL.glLightfv(GL.GL_LIGHT0, GL.GL_POSITION, lightLocation, 0); // 平行光源を設定します 
-//    GL.glLightfv(GL.GL_LIGHT0, GL.GL_SPECULAR, this.lightSpecular, 0); // 反射光の強さを設定します 
-//    GL.glLightfv(GL.GL_LIGHT0, GL.GL_DIFFUSE, this.lightDiffuse, 0); // 拡散光の強さを設定します 
-//    GL.glLightfv(GL.GL_LIGHT0, GL.GL_AMBIENT, this.lightAmbient, 0); // 環境光の強さを設定します
   }
 
   /**
@@ -160,7 +154,7 @@ public class OpenglesObjectRenderer implements ObjectRenderer {
     
     this.grid.display(gl);
     
-//    onSurfaceChanged(null, (int)bounds.getWidth(), (int)bounds.getHeight());
+    onSurfaceChanged(null, (int)bounds.getWidth(), (int)bounds.getHeight());
   }
   
   private void createDepthBuffer(int width, int height) {
@@ -211,18 +205,18 @@ public class OpenglesObjectRenderer implements ObjectRenderer {
 	 * @param g
 	 * @param b
 	 */
-	private void setMaterial(float r, float g, float b) {
-		float a = 1.0f;
-		// マテリアルの環境光色の指定
-		GL.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, new float[] { r, g, b, a }, 0);
+  private void setMaterial(float r, float g, float b) {
+	  float a = 1.0f;
+	  // マテリアルの環境光色の指定
+	  GL.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, new float[] { r, g, b, a }, 0);
 
-		// マテリアルの拡散光色の指定
-		GL.glMaterialfv(GL.GL_FRONT, GL.GL_DIFFUSE, new float[] { r, g, b, a }, 0);
+	  // マテリアルの拡散光色の指定
+	  GL.glMaterialfv(GL.GL_FRONT, GL.GL_DIFFUSE, new float[] { r, g, b, a }, 0);
 
-		// マテリアルの鏡面光色と鏡面指数の指定
-		GL.glMaterialfv(GL.GL_FRONT, GL.GL_SPECULAR, new float[] { r, g, b, a }, 0);
-		GL.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 100.0f);
-	}
+	  // マテリアルの鏡面光色と鏡面指数の指定
+	  GL.glMaterialfv(GL.GL_FRONT, GL.GL_SPECULAR, new float[] { r, g, b, a }, 0);
+	  GL.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 100.0f);
+  }
 
   /**
    * {@inheritDoc}
