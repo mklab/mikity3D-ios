@@ -32,8 +32,6 @@ import org.robovm.rt.bro.annotation.Callback;
 
 public class Main extends UIApplicationDelegateAdapter implements GLKViewControllerDelegate, UIGestureRecognizerDelegate {
 	private UIWindow window = null;
-	private boolean increasing = false;
-	private float curRed = 0.0f;
 	
 	private Canvas viewController;
 
@@ -49,9 +47,14 @@ public class Main extends UIApplicationDelegateAdapter implements GLKViewControl
 		viewController.viewDidLoad();
 		view.setDelegate(viewController);
 		
-		UISplitViewController split = new UISplitViewController();
+		final Menu menu = new Menu(messenger);
 		
-		Menu menu = new Menu(messenger);
+		UISplitViewController split = new UISplitViewController() {
+			@Override
+			public boolean shouldAutorotate() {
+				return menu.isRockRotation();
+			}
+		};
 		
 		messenger.setCanvas(viewController);
 		messenger.setMenu(menu);
