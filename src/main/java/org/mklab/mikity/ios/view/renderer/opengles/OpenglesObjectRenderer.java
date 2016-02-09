@@ -14,7 +14,7 @@ import org.mklab.mikity.model.xml.simplexml.config.LightModel;
 import org.mklab.mikity.model.xml.simplexml.config.LookAtPointModel;
 import org.mklab.mikity.model.xml.simplexml.model.ColorModel;
 import org.mklab.mikity.model.xml.simplexml.model.GroupModel;
-import org.mklab.mikity.view.renderer.ObjectRenderer;
+import org.mklab.mikity.renderer.ObjectRenderer;
 import org.robovm.apple.coregraphics.CGRect;
 import org.robovm.apple.glkit.GLKView;
 import org.robovm.apple.glkit.GLKViewController;
