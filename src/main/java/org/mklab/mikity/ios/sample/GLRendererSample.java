@@ -4,8 +4,8 @@ import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.nio.ByteOrder;
 
+import org.mklab.mikity.android.api.GLU;
 import org.mklab.mikity.ios.GL;
-import org.mklab.mikity.ios.GLU;
 import org.mklab.mikity.model.xml.simplexml.model.ColorModel;
 import org.robovm.apple.coregraphics.CGRect;
 import org.robovm.apple.glkit.GLKView;

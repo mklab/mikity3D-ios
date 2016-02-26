@@ -2,7 +2,7 @@ package org.mklab.mikity.ios.viewcontroller;
 import java.io.File;
 
 import org.mklab.mikity.ios.DirectoryPath;
-import org.mklab.mikity.ios.messenger.CanvasMenuInterface;
+import org.mklab.mikity.ios.messenger.CanvasMenuMessenger;
 import org.robovm.apple.coregraphics.CGRect;
 import org.robovm.apple.coregraphics.CGSize;
 import org.robovm.apple.foundation.NSArray;
@@ -39,14 +39,15 @@ public class Menu extends UIViewController{
 	private UILabel sampleSourceLabel;
 	private UILabel sampleModelLabel;
 	
+	/** スイッチ */
 //	private UISwitch accelerometerSwitch;
 	private UISwitch rockRotationSwitch;
 	private UISwitch gridShowingSwitch;
 	private UISwitch axisShowingSwitch;
 	
-	private CanvasMenuInterface messenger;
+	private CanvasMenuMessenger messenger;
 	
-	public Menu(CanvasMenuInterface messenger) {
+	public Menu(CanvasMenuMessenger messenger) {
 		UIScrollView scrollView = new UIScrollView();
 		scrollView.setFrame(new CGRect(0, 0, 300, 100));
 		scrollView.setContentSize(new CGSize(300, 1000));
