@@ -250,5 +250,4 @@ public class GLRendererSample extends GLKViewController implements GLKViewDelega
 		buffer.put(array).position(0);
 		return buffer;
 	}
-
 }

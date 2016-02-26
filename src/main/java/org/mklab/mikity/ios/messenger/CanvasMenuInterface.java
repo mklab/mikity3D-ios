@@ -83,5 +83,4 @@ public class CanvasMenuInterface {
 	public void setAxisShowing(boolean isAxisShowing) {
 		this.canvas.setAxisShowing(isAxisShowing);
 	}
-	
 }

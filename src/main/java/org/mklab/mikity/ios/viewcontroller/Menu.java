@@ -53,12 +53,6 @@ public class Menu extends UIViewController{
 		scrollView.setBackgroundColor(UIColor.white());
 		setView(scrollView);
 		
-		NSArray<NSURL> nsa = NSFileManager.getDefaultManager().getURLsForDirectory(NSSearchPathDirectory.DocumentationDirectory, NSSearchPathDomainMask.UserDomainMask);
-		NSURL nsu = (NSURL) nsa.first();
-		String snsu = nsu.getAbsoluteString() + "test";
-		
-		File newFile = new File(snsu);
-		
 		this.resourcePath = new DirectoryPath("sample");
 		this.messenger = messenger;
 		

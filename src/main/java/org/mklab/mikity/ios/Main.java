@@ -142,19 +142,16 @@ public class Main extends UIApplicationDelegateAdapter implements GLKViewControl
 
 	@Override
 	public boolean shouldBegin(UIGestureRecognizer gestureRecognizer) {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean shouldReceivePress(UIGestureRecognizer gestureRecognizer, UIPress press) {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean shouldReceiveTouch(UIGestureRecognizer gestureRecognizer, UITouch touch) {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
@@ -171,5 +168,4 @@ public class Main extends UIApplicationDelegateAdapter implements GLKViewControl
 		// TODO Auto-generated method stub
 		return false;
 	}
-
 }
