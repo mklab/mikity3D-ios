@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-package org.mklab.mikity.ios;
+package org.mklab.mikity.android.api;
+
+import org.mklab.mikity.ios.GL;
 
 public class GLU {
     /**
