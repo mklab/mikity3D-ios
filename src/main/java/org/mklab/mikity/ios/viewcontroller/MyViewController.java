@@ -13,6 +13,9 @@ import org.robovm.apple.uikit.UILabel;
 import org.robovm.apple.uikit.UIView;
 import org.robovm.apple.uikit.UIViewController;
 
+/**
+ * RoboVMの初期自動生成クラス
+ */
 public class MyViewController extends UIViewController {
     private final UIButton button;
     private final UILabel label;

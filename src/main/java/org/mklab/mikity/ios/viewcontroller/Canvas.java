@@ -42,7 +42,9 @@ import org.robovm.objc.annotation.Method;
 import org.robovm.rt.bro.annotation.Callback;
 
 /**
+ * 3Dモデルの表示用ViewControllerを表すクラス
  * 
+ * @author eguchi
  */
 public class Canvas extends GLKViewController {
 	/** レンダー */
@@ -183,10 +185,10 @@ public class Canvas extends GLKViewController {
 		try {
 			this.manager.addSource(sourceId, this.sourceData.get(sourceId));
 		} catch (IllegalAccessError e) {
-			// TODO not implemented
+			// TODO not implemented(エラーダイアログ)
 			e.printStackTrace();
 		} catch (IllegalArgumentException e) {
-			// TODO not implemented
+			// TODO not implemented(エラーダイアログ)
 			e.printStackTrace();
 		}
 	}
@@ -231,12 +233,12 @@ public class Canvas extends GLKViewController {
 	 */
 	public void runAnimation() {
 		if (this.manager == null) {
-			// TODO
+			// TODO エラーダイアログ
 //			showAlertMessageInDialog(getString(R.string.modelDataIsNotReady));
 			return;
 		}
 		if (this.manager.isSourceReady() == false) {
-			// TODO
+			// TODO エラーダイアログ
 //			showAlertMessageInDialog(getString(R.string.sourceDataIsNotReady));
 			return;
 		}
@@ -263,7 +265,7 @@ public class Canvas extends GLKViewController {
 	    this.isPaused = false;
 	    
 	    this.animationTask = new AnimationTask(this.startTime, this.stopTime, getObjectGroupManager(), getObjectRender(), this.delayTime);
-	   // TODO not implemented 
+	   // TODO not implemented  
 //	    this.animationTask.setSpeedScale(this.canvasActivity.ndFragment.animationSpeedRate/1000.0);
 	    this.animationTask.addAnimationTaskListener(new AnimationTaskListener() {
 	    	/**
@@ -424,6 +426,11 @@ public class Canvas extends GLKViewController {
 		this.pausedTime = pausedTime;
 	}
 	
+	/**
+	 * パン操作を３次元シーンに反映させる
+	 * 
+	 * @param gestureRecognizer パン操作認識器
+	 */
 	public void handlePan(UIPanGestureRecognizer gestureRecognizer) {
 		final int touchCount = (int) gestureRecognizer.getNumberOfTouches();
 		CGPoint translation = gestureRecognizer.getTranslation(getView());
@@ -459,6 +466,11 @@ public class Canvas extends GLKViewController {
 		this.objectRenderer.updateDisplay();
 	}
 	
+	/**
+	 * ピンチ操作を３次元シーンに反映させる
+	 * 
+	 * @param gestureRecognizer ピンチ操作認識器
+	 */
 	public void handlePinch(UIPinchGestureRecognizer gestureRecognizer) {
 		if (gestureRecognizer.getState() == UIGestureRecognizerState.Began) {
 			this.rotating = false;

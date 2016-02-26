@@ -11,6 +11,7 @@ import org.robovm.apple.uikit.UIViewController;
  * ナビゲーションバーを表すクラス
  */
 public class Navigation extends UINavigationController {
+	/** ナビゲーションバーを配置するViewController */
 	private Canvas canvas;
 	
 	public Navigation(Canvas canvas) {

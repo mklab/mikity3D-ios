@@ -1,7 +1,6 @@
 package org.mklab.mikity.ios.messenger;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.regex.Pattern;
 
 import org.mklab.mikity.ios.DirectoryPath;
@@ -43,6 +42,13 @@ public class CanvasMenuMessenger {
 		this.menu = menu;
 	}
 	
+	/**
+	 * モデルファイルを読み込む
+	 * ※MenuからCanvasへのメッセージ送信
+	 * 
+	 * @param directory 読み込み先のファイルパス
+	 * @param selectFile 読み込むファイル
+	 */
 	public void readModel(DirectoryPath directory, String selectFile) {
 		String path = readFilePath(directory, selectFile);
 		File modelFile = new File(path);
@@ -50,11 +56,18 @@ public class CanvasMenuMessenger {
 		this.canvas.loadModelData(modelFile);
 	}
 	
-	public void readSource(DirectoryPath directory, String selectFile) {
-		String path = readFilePath(directory, selectFile);
-		File sourceFile = new File(path);
+	/**
+	 * ソースファイルを読み込む
+	 * ※MenuからCanvasへのメッセージ送信
+	 * 
+	 * @param path 読み込み先のファイルパス
+	 * @param selectFile
+	 */
+	public void readSource(DirectoryPath path, String selectFile) {
+		String paths = readFilePath(path, selectFile);
+		File sourceFile = new File(paths);
 		
-		this.canvas.readSourceData("0", sourceFile, path);
+		this.canvas.readSourceData("0", sourceFile, paths);
 		this.canvas.addSource("0");
 	}
 	
@@ -68,6 +81,12 @@ public class CanvasMenuMessenger {
 		return path;
 	}
 	
+	/**
+	 * モデルデータの情報を反映する
+	 * ※CanvasからMenuへのメッセージ送信
+	 * 
+	 * @param model モデルデータクラス
+	 */
 	public void setModelData(Mikity3DModel model) {
 		boolean isAxisShowing = model.getConfiguration(0).getBaseCoordinate().isAxisShowing();
 		boolean isGridShowing = model.getConfiguration(0).getBaseCoordinate().isGridShowing();
@@ -76,10 +95,22 @@ public class CanvasMenuMessenger {
 		this.menu.setAxisShowing(isAxisShowing);
 	}
 	
+	/**
+	 * グリッド表示の情報を反映する
+	 * ※MenuからCanvasへのメッセージ送信
+	 * 
+	 * @param isGridShowing グリッド表示フラグ
+	 */
 	public void setGridShowing(boolean isGridShowing) {
 		this.canvas.setGridShowing(isGridShowing);
 	}
 	
+	/**
+	 * 座標軸表示の情報を反映する
+	 * ※MenuからCanvasへのメッセージ送信
+	 * 
+	 * @param isAxisShowing 座標軸表示フラグ
+	 */
 	public void setAxisShowing(boolean isAxisShowing) {
 		this.canvas.setAxisShowing(isAxisShowing);
 	}

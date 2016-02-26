@@ -16,17 +16,28 @@ public class DirectoryPath {
 	/** ルートディレクトリ */
 	private String root;
 
+	/**
+	 * @param rootPathName ルートディレクトリ
+	 */
 	public DirectoryPath(String rootPathName) {
 		this.dirName = rootPathName;
 		this.pathName = rootPathName;
 		this.root = rootPathName;
 	}
 	
+	/**
+	 * ディレクトリにアクセスする
+	 * 
+	 * @param dirName アクセスするディレクトリ名
+	 */
 	public void accessDirectory(String dirName) {
 		this.dirName = dirName;
 		this.pathName += ("/" + dirName);
 	}
 	
+	/**
+	 * カレントディレクトリの１つ上位のディレクトリに戻る
+	 */
 	public void backDirectory() {
 		if (!isRoot()) {
 			int last_path = this.pathName.lastIndexOf("/");

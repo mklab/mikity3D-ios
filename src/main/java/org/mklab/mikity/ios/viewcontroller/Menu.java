@@ -180,14 +180,30 @@ public class Menu extends UIViewController{
 		
 	}
 	
+	/**
+	 * 座標軸表示を設定する
+	 * 
+	 * @param isShowing 表示フラグ
+	 */
 	public void setAxisShowing(boolean isShowing) {
 		this.axisShowingSwitch.setOn(isShowing);
 	}
 	
+	
+	/**
+	 * グリッド表示を設定する
+	 * 
+	 * @param isShowing 表示フラグ
+	 */
 	public void setGridShowing(boolean isShowing) {
 		this.gridShowingSwitch.setOn(isShowing);
 	}
 	
+	/**
+	 * 選択モデルを表示する
+	 * 
+	 * @param model 選択モデル
+	 */
 	private void setModelLabel(String model) {
 		if (this.sampleModelLabel == null) {
 			this.sampleModelLabel = createLabel(model, new CGRect(90, 450, 200, 30));
@@ -196,6 +212,11 @@ public class Menu extends UIViewController{
 		}
 	}
 
+	/**
+	 * 選択ソースを表示する
+	 * 
+	 * @param source 選択ソース
+	 */
 	private void setSourceLabel(String source) {
 		if (this.sampleSourceLabel == null) {
 			this.sampleSourceLabel = createLabel(source, new CGRect(90, 490, 200, 30));
@@ -242,6 +263,12 @@ public class Menu extends UIViewController{
 		return button;
 	}
 	
+	/**
+	 * 表示ボタンを生成する
+	 * 
+	 * @param viewController 表示したいViewContrller
+	 * @return 表示ボタン
+	 */
 	public UIBarButtonItem getDisplayItem(final UIViewController viewController) {
 		UIBarButtonItem display = new UIBarButtonItem(UIBarButtonSystemItem.Compose, new OnClickListener() {
 			@Override
