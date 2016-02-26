@@ -5,6 +5,7 @@ import org.robovm.apple.uikit.UIBarButtonItem;
 import org.robovm.apple.uikit.UIBarButtonItem.OnClickListener;
 import org.robovm.apple.uikit.UIBarButtonSystemItem;
 import org.robovm.apple.uikit.UINavigationController;
+import org.robovm.apple.uikit.UIViewController;
 
 /**
  * ナビゲーションバーを表すクラス
@@ -47,5 +48,18 @@ public class Navigation extends UINavigationController {
 		});
 		
 		return new NSArray<>(repeat, pause, stop, play);
+	}
+	
+	public UIBarButtonItem getDisplayItem(final UIViewController viewController, final UIBarButtonItem button) {
+		UIBarButtonItem display = new UIBarButtonItem(UIBarButtonSystemItem.Compose, new OnClickListener() {
+			@Override
+			public void onClick(UIBarButtonItem barButtonItem) {
+//				viewController.getNavigationItem().setLeftBarButtonItem(button);
+				UINavigationController navi = new UINavigationController(viewController);
+				presentViewController(navi, true, null);
+			}
+		});
+		
+		return display;
 	}
 }

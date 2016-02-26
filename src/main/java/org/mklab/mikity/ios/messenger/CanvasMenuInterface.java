@@ -17,6 +17,10 @@ public class CanvasMenuInterface {
 	private Canvas canvas;
 	private Menu menu;
 	
+	public Canvas getCanvas() {
+		return canvas;
+	}
+	
 	/**
 	 * キャンバスを割り当てる
 	 * 
@@ -25,7 +29,11 @@ public class CanvasMenuInterface {
 	public void setCanvas(Canvas canvas) {
 		this.canvas = canvas;
 	}
-	
+
+	public Menu getMenu() {
+		return menu;
+	}
+
 	/**
 	 * メニューを割り当てる
 	 * 

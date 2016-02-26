@@ -10,6 +10,8 @@ import org.robovm.apple.foundation.NSFileManager;
 import org.robovm.apple.foundation.NSSearchPathDirectory;
 import org.robovm.apple.foundation.NSSearchPathDomainMask;
 import org.robovm.apple.foundation.NSURL;
+import org.robovm.apple.uikit.UIBarButtonItem;
+import org.robovm.apple.uikit.UIBarButtonSystemItem;
 import org.robovm.apple.uikit.UIButton;
 import org.robovm.apple.uikit.UIButtonType;
 import org.robovm.apple.uikit.UIColor;
@@ -17,6 +19,7 @@ import org.robovm.apple.uikit.UIControl;
 import org.robovm.apple.uikit.UIControl.OnTouchUpInsideListener;
 import org.robovm.apple.uikit.UIControl.OnValueChangedListener;
 import org.robovm.apple.uikit.UIControlState;
+import org.robovm.apple.uikit.UIDevice;
 import org.robovm.apple.uikit.UIEvent;
 import org.robovm.apple.uikit.UIFont;
 import org.robovm.apple.uikit.UILabel;
@@ -25,6 +28,7 @@ import org.robovm.apple.uikit.UIModalTransitionStyle;
 import org.robovm.apple.uikit.UIScrollView;
 import org.robovm.apple.uikit.UISwitch;
 import org.robovm.apple.uikit.UIViewController;
+import org.robovm.apple.uikit.UIBarButtonItem.OnClickListener;
 
 /**
  * メニュー画面を表すクラス
@@ -241,5 +245,16 @@ public class Menu extends UIViewController{
 		button.getTitleLabel().setFont(UIFont.getBoldSystemFont(22));
 
 		return button;
+	}
+	
+	public UIBarButtonItem getDisplayItem(final UIViewController viewController) {
+		UIBarButtonItem display = new UIBarButtonItem(UIBarButtonSystemItem.Compose, new OnClickListener() {
+			@Override
+			public void onClick(UIBarButtonItem barButtonItem) {
+				presentViewController(viewController, true, null);
+			}
+		});
+		
+		return display;
 	}
 }

@@ -14,9 +14,13 @@ import org.robovm.apple.opengles.EAGLRenderingAPI;
 import org.robovm.apple.uikit.UIApplication;
 import org.robovm.apple.uikit.UIApplicationDelegateAdapter;
 import org.robovm.apple.uikit.UIApplicationLaunchOptions;
+import org.robovm.apple.uikit.UIBarButtonItem;
 import org.robovm.apple.uikit.UIColor;
+import org.robovm.apple.uikit.UIDevice;
 import org.robovm.apple.uikit.UIGestureRecognizer;
 import org.robovm.apple.uikit.UIGestureRecognizerDelegate;
+import org.robovm.apple.uikit.UIModalPresentationStyle;
+import org.robovm.apple.uikit.UINavigationItem;
 import org.robovm.apple.uikit.UIPanGestureRecognizer;
 import org.robovm.apple.uikit.UIPinchGestureRecognizer;
 import org.robovm.apple.uikit.UIPress;
@@ -34,6 +38,8 @@ public class Main extends UIApplicationDelegateAdapter implements GLKViewControl
 	private UIWindow window = null;
 	
 	private Canvas viewController;
+	private Menu menu;
+	private UIBarButtonItem displayMenu;
 
 	@Override
 	public boolean didFinishLaunching(UIApplication application, UIApplicationLaunchOptions launchOptions) {
@@ -47,7 +53,7 @@ public class Main extends UIApplicationDelegateAdapter implements GLKViewControl
 		viewController.viewDidLoad();
 		view.setDelegate(viewController);
 		
-		final Menu menu = new Menu(messenger);
+		menu = new Menu(messenger);
 		
 		UISplitViewController split = new UISplitViewController() {
 			@Override
@@ -75,11 +81,19 @@ public class Main extends UIApplicationDelegateAdapter implements GLKViewControl
 	    panGesture.setDelegate(this);
 	    viewController.getView().addGestureRecognizer(panGesture);
 		
-		split.setViewControllers(new NSArray<UIViewController>(menu, navi));
-		split.setPreferredDisplayMode(UISplitViewControllerDisplayMode.PrimaryHidden);
+		String modelName = UIDevice.getCurrentDevice().getModel();
+		
+		if (modelName.equals("iPhone") || modelName.equals("iPod touch")) {
+			split.setViewControllers(new NSArray<UIViewController>(navi, menu));
+			viewController.getNavigationItem().setLeftBarButtonItem(navi.getDisplayItem(menu, menu.getNavigationItem().getLeftBarButtonItem()));
+		} else {
+			split.setViewControllers(new NSArray<UIViewController>(menu, navi));
+			viewController.getNavigationItem().setLeftBarButtonItem(split.getDisplayModeButtonItem());
+		}
+		
 		split.setPresentsWithGesture(false);
-
-		viewController.getNavigationItem().setLeftBarButtonItem(split.getDisplayModeButtonItem());
+		split.setPreferredDisplayMode(UISplitViewControllerDisplayMode.PrimaryHidden);
+		
 		viewController.getNavigationItem().setTitle("Mikity3D");
 		viewController.getNavigationItem().setRightBarButtonItems(navi.getPlayerButtons());
 		
@@ -89,6 +103,8 @@ public class Main extends UIApplicationDelegateAdapter implements GLKViewControl
 		this.window.setRootViewController(split);
 		this.window.setBackgroundColor(UIColor.white());
 		this.window.makeKeyAndVisible();
+		
+		UINavigationItem item = split.getNavigationItem();
 
 		return true;
 	}
