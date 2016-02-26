@@ -10,7 +10,7 @@ import java.util.Timer;
 
 import org.mklab.mikity.control.AnimationTaskListener;
 import org.mklab.mikity.ios.control.AnimationTask;
-import org.mklab.mikity.ios.messenger.CanvasMenuInterface;
+import org.mklab.mikity.ios.messenger.CanvasMenuMessenger;
 import org.mklab.mikity.ios.view.renderer.opengles.OpenglesObjectRenderer;
 import org.mklab.mikity.model.GroupObjectManager;
 import org.mklab.mikity.model.xml.Mikity3dFactory;
@@ -87,9 +87,10 @@ public class Canvas extends GLKViewController {
 	/** 繰り返し再生中ならばtrue */
 	boolean isRepeating = false;
 	
-	private CanvasMenuInterface messenger;
+	/** Menuとの連絡器 */
+	private CanvasMenuMessenger messenger;
 	
-	public Canvas(CanvasMenuInterface messenger) {
+	public Canvas(CanvasMenuMessenger messenger) {
 		this.messenger = messenger;
 		
 		this.scaling = false;

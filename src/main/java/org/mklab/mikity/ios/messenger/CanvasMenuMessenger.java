@@ -13,7 +13,7 @@ import org.robovm.apple.foundation.NSBundle;
 /**
  * CanvasMenu間のインターフェースを表すクラス
  */
-public class CanvasMenuInterface {
+public class CanvasMenuMessenger {
 	private Canvas canvas;
 	private Menu menu;
 	
