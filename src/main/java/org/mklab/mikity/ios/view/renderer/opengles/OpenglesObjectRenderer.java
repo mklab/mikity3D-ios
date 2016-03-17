@@ -4,7 +4,6 @@ import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.mklab.mikity.android.api.GLU;
 import org.mklab.mikity.ios.GL;
 import org.mklab.mikity.model.GroupObjectManager;
 import org.mklab.mikity.model.xml.simplexml.ConfigurationModel;
@@ -19,6 +18,8 @@ import org.robovm.apple.glkit.GLKView;
 import org.robovm.apple.glkit.GLKViewController;
 import org.robovm.apple.glkit.GLKViewDelegate;
 import org.robovm.apple.uikit.UIScreen;
+
+import android.api.GLU;
 
 /**
  * OpenGL用のキャンバスを表すクラスです。

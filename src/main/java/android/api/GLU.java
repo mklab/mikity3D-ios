@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.mklab.mikity.android.api;
+package android.api;
 
 import org.mklab.mikity.ios.GL;
 

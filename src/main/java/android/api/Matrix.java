@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.mklab.mikity.android.api;
+package android.api;
 /**
  * Matrix math utilities. These methods operate on OpenGL ES format
  * matrices and vectors stored in float arrays.
