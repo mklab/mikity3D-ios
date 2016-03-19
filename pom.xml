@@ -18,12 +18,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>mikity3D-ios</artifactId>
+	<version>0.5.1</version>
 
 	<parent>
-		<groupId>org.mklab.mikity3D</groupId>
-		<artifactId>mikity3D</artifactId>
-		<version>0.7.1-SNAPSHOT</version>
-		<relativePath>../pom.xml</relativePath>
+		<groupId>org.mklab</groupId>
+		<artifactId>mklab-base-pom</artifactId>
+		<version>1.1.56</version>
 	</parent>
  
 	<repositories>
